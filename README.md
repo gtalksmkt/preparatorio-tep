@@ -20,7 +20,6 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 | Datas das turmas, das provas e prazo de inscrição (2027) | hero, seletor TEP/R+, comparativo, CTA final |
 | Preços (TEP 12x R$ 249,70 · R+ 12x R$ 199,70) | seletor TEP/R+ e seção `#pricing` |
 | Quantidade de questões e flashcards | cards da seção `#estrutura` |
-| Currículo acadêmico das professoras | seção `#professoras` |
 | Depoimentos | seção `#depoimentos` — devem vir de alunos dos outros preparatórios do Grupo Talks |
 | IDs dos vídeos do YouTube | var `VIDEOS` no `<script>` |
 | Links de checkout | var `LINKS` no `<script>` (hoje todos apontam para o WhatsApp) |
@@ -35,6 +34,8 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 - **Não alegar resultado** (nº de aprovados, % de aprovação, tempo de casa): o curso
   começa em 2027. A prova de valor é o volume de conteúdo.
 - **Não existe garantia de reembolso.**
+- O **currículo acadêmico das professoras já é real** (CRM, RQE, formação, residências,
+  atuação e preceptoria) — não substituir por placeholder.
 
 ## Rodar localmente
 

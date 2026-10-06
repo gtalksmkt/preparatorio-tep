@@ -31,7 +31,7 @@
                    nem tempo de casa — o curso começa em 2027)
   • Depoimentos:   os 3 são fictícios; devem vir de alunos de OUTROS
                    preparatórios do Grupo Talks, com a prova indicada
-  • Bios:          currículo acadêmico das professoras é placeholder
+  (o currículo acadêmico das professoras JÁ É REAL — não mexer)
   • Vídeo:         trocar VIDEO_ID_TEP / VIDEO_ID_RP (vars no <script>)
   • Links:         checkout/WhatsApp nas vars LINK_* (topo do <script>)
   • E-mail:        contato@emergencytalks.com.br (confirmar se muda
@@ -239,16 +239,18 @@ ul{list-style:none}
 
 /* ═══ PROFESSORAS ═════════════════════════════════════════════ */
 .profs{display:grid;grid-template-columns:1fr 1fr;gap:26px;max-width:940px;margin:0 auto}
-.prof{padding:30px;border-radius:24px;background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid var(--gbd);text-align:center}
+.prof{padding:30px;border-radius:24px;background:linear-gradient(165deg,rgba(255,255,255,.06),rgba(255,255,255,.015));border:1px solid var(--gbd);text-align:center;display:flex;flex-direction:column}
 .prof-img{width:132px;height:132px;border-radius:50%;object-fit:cover;margin:0 auto 20px;border:2px solid rgba(0,116,242,.4);box-shadow:0 0 36px rgba(0,116,242,.22)}
 .prof h3{font-size:21px;margin-bottom:4px}
-.prof-role{font-size:13px;font-weight:600;color:var(--blue-l);letter-spacing:.3px;margin-bottom:16px}
+.prof-role{font-size:13px;font-weight:600;color:var(--blue-l);letter-spacing:.3px;margin-bottom:8px}
+.prof-reg{display:inline-block;align-self:center;padding:4px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);background:rgba(255,255,255,.05);font-size:11.5px;font-weight:600;letter-spacing:.4px;color:var(--gl);margin-bottom:18px}
 .prof-bio{font-size:14.5px;color:var(--gm);line-height:1.65;margin-bottom:20px}
 .prof-cv{text-align:left;padding-top:20px;border-top:1px solid rgba(255,255,255,.1);display:flex;flex-direction:column;gap:11px}
 .prof-cv-t{font-size:11px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue-l);margin-bottom:3px}
 .prof-cv li{display:flex;gap:11px;align-items:flex-start;font-size:14px;color:var(--gl);line-height:1.5}
 .prof-cv li svg{flex-shrink:0;width:16px;height:16px;margin-top:3px;stroke:var(--blue-l);stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round}
-.prof-quote{font-size:15px;font-style:italic;color:var(--gl);margin-top:22px;padding-top:18px;border-top:1px solid rgba(255,255,255,.1)}
+.prof-quote{font-size:15px;font-style:italic;color:var(--gl);margin-top:auto;padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+.prof-cv{margin-bottom:24px}
 
 /* ═══ DEPOIMENTOS ═════════════════════════════════════════════ */
 .deps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1060px;margin:0 auto}
@@ -425,8 +427,8 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
       <div class="photo-frame">
         <img src="professoras.png" alt="Rebecca Azulay e Natália Dias, professoras do Preparatório TEP + R+ do Ped Talks" width="820" height="720">
         <div class="photo-names">
-          <span class="pname">Rebecca Azulay <span>· TEP</span></span>
-          <span class="pname">Natália Dias <span>· R+</span></span>
+          <span class="pname">Rebecca Azulay <span>· Pediatria</span></span>
+          <span class="pname">Natália Dias <span>· Intensiva Pediátrica</span></span>
         </div>
       </div>
       <div class="flt flt-1">
@@ -622,30 +624,32 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <article class="prof" data-r data-d="1">
       <img src="rebecca.png" alt="Rebecca Azulay" class="prof-img" width="132" height="132">
       <h3>Rebecca Azulay</h3>
-      <!-- FICTICIO: currículo acadêmico — substituir pelo real (graduação, residência, títulos, CRM/RQE, atuação) -->
-      <div class="prof-role">Coordenadora do Preparatório TEP</div>
-      <p class="prof-bio">Dedica-se à preparação de médicos para a prova da SBP, com foco em método de estudo e gestão de tempo.</p>
+      <div class="prof-role">Médica Especialista em Medicina Pediátrica</div>
+      <div class="prof-reg">CRM 23598 — CE · RQE 18057</div>
+      <p class="prof-bio">Pediatra formada pela Unichristus, com residência no Hospital Infantil Albert Sabin. Atua no Time de Resposta Rápida e na UTI do Hospital SOPAI e é preceptora de internato médico.</p>
       <ul class="prof-cv">
         <li class="prof-cv-t">Currículo acadêmico</li>
-        <li><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Graduação em Medicina — [instituição]</li>
-        <li><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Residência Médica em Pediatria — [instituição]</li>
-        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.2 14-1.7 7L12 18l5.5 3-1.7-7"/></svg>Título de Especialista em Pediatria (TEP) — SBP/AMB</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>CRM 00000 · RQE 00000</li>
+        <li><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Médica formada pela Unichristus</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Residência em Pediatria pelo Hospital Infantil Albert Sabin</li>
+        <li><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Plantonista do Time de Resposta Rápida e UTI do Hospital Filantrópico SOPAI</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Preceptora do internato de medicina da Unichristus e da Faculdade Estácio Canindé</li>
       </ul>
       <p class="prof-quote">“Nosso foco é transformar o estudo em resultado.”</p>
     </article>
     <article class="prof" data-r data-d="2">
       <img src="natalia.png" alt="Natália Dias" class="prof-img" width="132" height="132">
       <h3>Natália Dias</h3>
-      <!-- FICTICIO: currículo acadêmico — substituir pelo real (graduação, residência, títulos, CRM/RQE, atuação) -->
-      <div class="prof-role">Coordenadora do Preparatório R+</div>
-      <p class="prof-bio">Constrói o conteúdo a partir da análise das provas das principais instituições do país.</p>
+      <div class="prof-role">Médica Especialista em Medicina Intensiva Pediátrica</div>
+      <div class="prof-reg">CRM 17603 — CE · RQE 14787</div>
+      <p class="prof-bio">Pediatra e intensivista pediátrica, com residências no Hospital Infantil Albert Sabin e no IMIP. Plantonista de UTI Pediátrica e preceptora de residência médica em Pediatria e em Medicina Intensiva Pediátrica.</p>
       <ul class="prof-cv">
         <li class="prof-cv-t">Currículo acadêmico</li>
-        <li><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Graduação em Medicina — [instituição]</li>
-        <li><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Residência Médica em Pediatria — [instituição]</li>
-        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.2 14-1.7 7L12 18l5.5 3-1.7-7"/></svg>Aprovada em processo seletivo de R+ — [área / instituição]</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>CRM 00000 · RQE 00000</li>
+        <li><svg viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1.7 2.7 3 6 3s6-1.3 6-3v-5"/></svg>Médica formada pela Universidade Federal do Cariri</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Residência em Pediatria pelo Hospital Infantil Albert Sabin</li>
+        <li><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Residência em Medicina Intensiva Pediátrica pelo Instituto de Medicina Integral Professor Fernando Figueira (IMIP)</li>
+        <li><svg viewBox="0 0 24 24"><circle cx="12" cy="9" r="6"/><path d="m8.2 14-1.7 7L12 18l5.5 3-1.7-7"/></svg>Título de Especialista em Pediatria pela AMB/SBP</li>
+        <li><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>Plantonista da UTI Pediátrica do Hospital Albert Sabin e do Hospital Infantil Filantrópico SOPAI</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>Preceptora das residências médicas de Pediatria e de Medicina Intensiva Pediátrica</li>
       </ul>
       <p class="prof-quote">“A preparação começa com estratégia, não com pressa.”</p>
     </article>
