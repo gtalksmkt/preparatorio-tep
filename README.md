@@ -1,7 +1,7 @@
-# Preparatório TEP e R+ — Ped Talks
+# Preparatório TEP — Ped Talks
 
-Landing dos preparatórios para o **Título de Especialista em Pediatria (TEP)** e para a
-**prova de Residência Médica R+ em Pediatria**. Turmas 2027.
+Landing do preparatório para o **Título de Especialista em Pediatria (TEP)**.
+Turma 2027.
 
 🔗 **Página publicada:** https://gtalksmkt.github.io/preparatorio-tep/
 
@@ -17,19 +17,18 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 | Item | Onde |
 |---|---|
 | Números do hero (+80 aulas, +120h, +1.500 questões, +600 flashcards) | `.hero-stats` |
-| Datas das turmas, das provas e prazo de inscrição (2027) | hero, seletor TEP/R+, comparativo, CTA final |
-| Preços (TEP 12x R$ 249,70 · R+ 12x R$ 199,70) | seletor TEP/R+ e seção `#pricing` |
+| Datas da turma, da prova e prazo de inscrição (2027) | hero, `#curso`, `#prova`, CTA final |
+| Preço (12x R$ 249,70 · R$ 2.497 à vista) | `#curso` e `#pricing` |
 | Quantidade de questões e flashcards | cards da seção `#estrutura` |
 | Depoimentos | seção `#depoimentos` — devem vir de alunos dos outros preparatórios do Grupo Talks |
-| IDs dos vídeos do YouTube | var `VIDEOS` no `<script>` |
+| ID do vídeo do YouTube | var `VIDEO_ID` no `<script>` |
 | Links de checkout | var `LINKS` no `<script>` (hoje todos apontam para o WhatsApp) |
 | E-mail de contato | rodapé — confirmar se continua `contato@emergencytalks.com.br` |
 
 ## Regras do produto (decididas com o cliente)
 
-- O **TEP** e o **R+** são cursos **independentes**: não existe combo, a matrícula é
-  em um dos dois.
-- O TEP é a preparação completa; o R+ tem menos aulas, porque a prova cobra menos.
+- **Só existe o Preparatório TEP.** O Preparatório R+ foi descontinuado em 13/10/2026
+  e não deve voltar à página em nenhuma seção.
 - **Não citar número de aulas por semana** — usar "aulas semanais" até o dia da prova.
 - **Não alegar resultado** (nº de aprovados, % de aprovação, tempo de casa): o curso
   começa em 2027. A prova de valor é o volume de conteúdo.
