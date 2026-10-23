@@ -116,10 +116,10 @@ ul{list-style:none}
 .nav-row{max-width:1160px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
 .nav-logo{height:30px;width:auto}
 .nav-links{display:flex;align-items:center;gap:26px}
-.nav-links a{font-size:14px;font-weight:500;color:var(--gl);transition:color .2s}
+.nav-links a{font-size:14px;font-weight:500;color:var(--gl);transition:color .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--white)}
 .nav-r{display:flex;align-items:center;gap:16px}
-.nav-wpp{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--gl)}
+.nav-wpp{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--gl);white-space:nowrap}
 .wpp-dot{width:8px;height:8px;border-radius:50%;background:#25D366;animation:pg 2.2s infinite}
 @keyframes pg{0%,100%{box-shadow:0 0 0 0 rgba(37,211,102,.5)}60%{box-shadow:0 0 0 7px rgba(37,211,102,0)}}
 .burger{display:none;width:42px;height:42px;border-radius:12px;border:1px solid var(--gbd);background:rgba(255,255,255,.05);cursor:pointer;align-items:center;justify-content:center}
@@ -160,7 +160,8 @@ ul{list-style:none}
 .photo-frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 70px rgba(0,116,242,.12)}
 .photo-frame img{width:100%;height:auto;display:block}
 .photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,4,5,0) 45%,rgba(4,4,5,.55) 78%,rgba(4,4,5,.92) 100%),linear-gradient(to right,rgba(4,4,5,.35),transparent 30%)}
-.photo-names{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 24px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+/* nomes alinhados à direita: o selo "Próxima turma" (.flt-1) flutua no canto inferior esquerdo */
+.photo-names{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 24px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
 .pname{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--white)}
 .pname::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue)}
 .pname span{color:var(--gm);font-weight:500}
@@ -319,6 +320,11 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
 #sticky .btn{flex:1;padding:14px 10px;font-size:14px}
 
 /* ═══ RESPONSIVO ══════════════════════════════════════════════ */
+/* telas médias: o menu completo não cabe — tira o "Fale conosco" (o WhatsApp segue no hero) */
+@media (max-width:1100px){
+  .nav-links{gap:20px}
+  .nav-wpp{display:none}
+}
 @media (max-width:1000px){
   .nav-links{display:none}
   .burger{display:flex}
@@ -327,7 +333,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .hero-in{grid-template-columns:1fr;gap:48px}
   .hero-desc{max-width:none}
   .hero-vis{max-width:460px;margin:0 auto;width:100%}
-  .flt-1{left:-12px;bottom:40px}
+  .flt-1{left:-12px;bottom:52px}
   .flt-2{right:-10px}
   .feat,.deps{grid-template-columns:1fr 1fr}
 }
