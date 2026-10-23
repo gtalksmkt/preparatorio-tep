@@ -17,7 +17,7 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 | Item | Onde |
 |---|---|
 | Números do hero (+80 aulas, +120h, +1.500 questões, +600 flashcards) | `.hero-stats` |
-| Datas da turma, da prova e prazo de inscrição (2027) | hero, `#curso`, `#prova`, CTA final |
+| Datas da turma, da prova e prazo de inscrição (2027) | hero, `#curso`, CTA final |
 | Preço (12x R$ 249,70 · R$ 2.497 à vista) | `#curso` e `#pricing` |
 | Quantidade de questões e flashcards | cards da seção `#estrutura` |
 | Depoimentos | seção `#depoimentos` — devem vir de alunos dos outros preparatórios do Grupo Talks |
