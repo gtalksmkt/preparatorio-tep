@@ -350,6 +350,13 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .foot{flex-direction:column}
   .foot-nav{gap:36px}
   #curso,#video{padding-left:20px;padding-right:20px}
+  /* Entenda o TEP: no celular cada linha vira bloco (rótulo em cima, texto embaixo) — sem rolagem lateral cortando o texto */
+  .cmp table{min-width:0}
+  .cmp tbody tr{display:block;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
+  .cmp tbody tr:last-child{border-bottom:none}
+  .cmp tbody th,.cmp td{display:block;width:auto;padding:0;border-bottom:none}
+  .cmp tbody th{white-space:normal;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
+  .cmp td{line-height:1.55}
 }
 @media (max-width:420px){
   .flt{display:none}
