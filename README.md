@@ -43,11 +43,13 @@ Antes de 20/11 a página já mostra o Lançamento.
 | | |
 |---|---|
 | Aulas em vídeo | 95 |
-| Aulas novas por semana | 4, toda segunda às 12h |
-| Semanas de liberação | 24, de 04/01 a 14/06/2027 |
-| Questões no banco | 950 (10 por aula) |
-| Flashcards | 1.900 (20 por tema) |
+| Liberação | toda segunda às 12h, de 04/01 a 14/06/2027 |
+| Questões no banco | 950 |
+| Flashcards | 1.900 |
 | Simulados | 4, um a cada 6 semanas de aula |
+
+**Não citar na página** (decisão de 03/11/2026): quantas aulas por semana, quantas
+semanas de liberação, quantas questões por aula nem quantos flashcards por tema.
 
 Liberação gradual: questões e flashcards entram junto com as aulas de cada temática,
 toda segunda às 12h. Aparecem no hero, no bloco de números de `#curso`, nos cards de
@@ -57,10 +59,9 @@ toda segunda às 12h. Aparecem no hero, no bloco de números de `#curso`, nos ca
 
 - **Só existe o Preparatório TEP.** O Preparatório R+ foi descontinuado em 13/10/2026
   e não deve voltar à página em nenhuma seção.
-- **Ritmo das aulas:** 4 aulas novas por semana, toda segunda às 12h (confirmado pela
-  diretoria em 03/11/2026; substitui a regra antiga de não citar o número por semana).
-  A liberação vai até 14/06/2027 — não dizer "aulas até o dia da prova"; o que vai até
-  a prova é o **acesso**.
+- **Ritmo das aulas:** "aulas novas toda segunda, às 12h", de 04/01 a 14/06/2027 — sem
+  dizer quantas por semana nem quantas semanas. Não dizer "aulas até o dia da prova";
+  o que vai até a prova é o **acesso**.
 - **Não alegar resultado** (nº de aprovados, % de aprovação, tempo de casa): o curso
   começa em 2027. A prova de valor é o volume de conteúdo.
 - **Não existe garantia de reembolso.**

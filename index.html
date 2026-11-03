@@ -25,8 +25,9 @@
   (os preços JÁ SÃO REAIS: 4 lotes de 20/11/2026 a 01/02/2027, em 6x sem
    juros — ficam na var LOTES do <script>; o lote do dia entra sozinho)
   (os números do curso JÁ SÃO REAIS, confirmados pela diretoria em 03/11/2026:
-   95 aulas, 4 por semana toda segunda 12h, 24 semanas de 04/01 a 14/06/2027,
-   950 questões, 1.900 flashcards, 4 simulados. NÃO usar nº de aprovados nem
+   95 aulas, toda segunda 12h, de 04/01 a 14/06/2027, 950 questões, 1.900
+   flashcards, 4 simulados. NÃO citar aulas por semana, nº de semanas,
+   questões por aula nem flashcards por tema; NÃO usar nº de aprovados nem
    tempo de casa — o curso começa em 2027)
   (NÃO pôr prazo de inscrição nem mês da prova: não há como confirmar)
   • Depoimentos:   os 3 são fictícios; devem vir de alunos de OUTROS
@@ -201,10 +202,10 @@ ul{list-style:none}
 .facts small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gm);margin-bottom:3px}
 
 /* números do curso (confirmados pela diretoria) + faixa da liberação gradual */
-.nums{max-width:960px;margin:20px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.num{position:relative;padding:24px 24px 22px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--gbd);transition:transform .25s,border-color .25s}
+.nums{max-width:960px;margin:20px auto 0;display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.num{padding:22px 22px 20px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--gbd);transition:transform .25s,border-color .25s}
 .num:hover{transform:translateY(-4px);border-color:rgba(0,116,242,.4)}
-.num .ic{position:absolute;top:20px;right:20px}
+.num .ic{margin-bottom:16px}
 .num-n{font-size:clamp(36px,4.6vw,50px);font-weight:900;letter-spacing:-1.5px;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums}
 .num-l{font-size:14.5px;color:var(--gl);line-height:1.5;margin-top:10px}
 .lib{max-width:960px;margin:14px auto 0;display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:16px;background:linear-gradient(90deg,var(--blue-d),var(--blue));box-shadow:0 0 34px rgba(0,116,242,.28);font-size:14.5px;line-height:1.5;color:#fff}
@@ -413,7 +414,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .lotes{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
   .nums{grid-template-columns:1fr 1fr;gap:10px}
   .num{padding:18px 16px}
-  .num .ic{position:static;margin-bottom:14px}
+  .num .ic{margin-bottom:14px}
   .num-l{font-size:13.5px}
   .lib{align-items:flex-start;padding:16px 18px;font-size:14px}
   .lote{padding:14px 15px}
@@ -441,8 +442,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
      O traço e a cor vêm do CSS de quem usa (.ic svg, .lib svg). -->
 <svg class="sprite" aria-hidden="true">
   <symbol id="i-play" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></symbol>
-  <symbol id="i-cal-plus" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M12 13v6M9 16h6"/></symbol>
-  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol>
   <symbol id="i-check-sq" viewBox="0 0 24 24"><path d="m9 11 3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></symbol>
   <symbol id="i-cards" viewBox="0 0 24 24"><rect x="2" y="7" width="15" height="13" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-2"/></symbol>
   <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
@@ -512,7 +511,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
         <span class="hero-main">TEP</span>
         <span class="hero-post">Título de Especialista em Pediatria</span>
       </h1>
-      <p class="hero-desc">A preparação completa para a prova da SBP: <strong>conteúdo guiado pela análise das provas anteriores</strong>, 4 aulas novas toda segunda e professoras tituladas e atuantes em serviço.</p>
+      <p class="hero-desc">A preparação completa para a prova da SBP: <strong>conteúdo guiado pela análise das provas anteriores</strong>, aulas novas toda segunda e professoras tituladas e atuantes em serviço.</p>
       <div class="hero-tags">
         <span class="htag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>100% online</span>
         <span class="htag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Aulas novas toda segunda</span>
@@ -584,11 +583,9 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   <!-- Números confirmados pela diretoria em 03/11/2026 (data-count: o número conta do zero ao aparecer) -->
   <div class="nums">
     <div class="num" data-r data-d="1"><span class="ic"><svg><use href="#i-play"/></svg></span><div class="num-n" data-count="95">95</div><p class="num-l">aulas em vídeo</p></div>
-    <div class="num" data-r data-d="2"><span class="ic"><svg><use href="#i-cal-plus"/></svg></span><div class="num-n" data-count="4">4</div><p class="num-l">aulas novas por semana, toda segunda às 12h</p></div>
-    <div class="num" data-r data-d="3"><span class="ic"><svg><use href="#i-hourglass"/></svg></span><div class="num-n" data-count="24">24</div><p class="num-l">semanas de liberação, de 04/01 a 14/06/2027</p></div>
-    <div class="num" data-r data-d="1"><span class="ic"><svg><use href="#i-check-sq"/></svg></span><div class="num-n" data-count="950">950</div><p class="num-l">questões no banco (10 por aula)</p></div>
-    <div class="num" data-r data-d="2"><span class="ic"><svg><use href="#i-cards"/></svg></span><div class="num-n" data-count="1900">1.900</div><p class="num-l">flashcards (20 por tema)</p></div>
-    <div class="num" data-r data-d="3"><span class="ic"><svg><use href="#i-target"/></svg></span><div class="num-n" data-count="4">4</div><p class="num-l">simulados, um a cada 6 semanas de aula</p></div>
+    <div class="num" data-r data-d="2"><span class="ic"><svg><use href="#i-check-sq"/></svg></span><div class="num-n" data-count="950">950</div><p class="num-l">questões no banco</p></div>
+    <div class="num" data-r data-d="3"><span class="ic"><svg><use href="#i-cards"/></svg></span><div class="num-n" data-count="1900">1.900</div><p class="num-l">flashcards</p></div>
+    <div class="num" data-r data-d="4"><span class="ic"><svg><use href="#i-target"/></svg></span><div class="num-n" data-count="4">4</div><p class="num-l">simulados, um a cada 6 semanas de aula</p></div>
   </div>
   <p class="lib" data-r><svg aria-hidden="true"><use href="#i-clock"/></svg><span><strong>Liberação gradual:</strong> questões e flashcards entram junto com as aulas de cada temática, toda segunda às 12h.</span></p>
 </section>
@@ -648,7 +645,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
       </div>
       <ul>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>95 aulas em vídeo: toda a Pediatria, do começo ao fim</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>4 aulas novas por semana, toda segunda às 12h</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Aulas novas toda segunda, às 12h</li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>950 questões no banco</li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>1.900 flashcards de revisão</li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>4 simulados ao longo do curso</li>
@@ -714,7 +711,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <div class="fcard" data-r data-d="2">
       <div class="fico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
       <h3>Aulas toda segunda</h3>
-      <p>4 aulas novas toda segunda, às 12h, durante 24 semanas (04/01 a 14/06/2027) — ritmo constante, pensado para a rotina médica.</p>
+      <p>Aulas novas toda segunda, às 12h, de 04/01 a 14/06/2027 — ritmo constante, pensado para a rotina médica.</p>
     </div>
     <div class="fcard" data-r data-d="3">
       <div class="fico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.8L7 14.3"/></svg></div>
@@ -724,12 +721,12 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <div class="fcard" data-r data-d="4">
       <div class="fico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
       <h3>Banco de questões</h3>
-      <p>950 questões comentadas (10 por aula), organizadas por tema e no estilo da banca da SBP.</p>
+      <p>950 questões comentadas, organizadas por tema e no estilo da banca da SBP.</p>
     </div>
     <div class="fcard" data-r data-d="5">
       <div class="fico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="15" height="13" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-2"/></svg></div>
       <h3>Flashcards</h3>
-      <p>1.900 flashcards de revisão ativa (20 por tema) para fixar o que não pode escapar na prova.</p>
+      <p>1.900 flashcards de revisão ativa para fixar o que não pode escapar na prova.</p>
     </div>
     <div class="fcard" data-r data-d="6">
       <div class="fico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
@@ -838,11 +835,11 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     </div>
     <div class="fq">
       <button class="fq-q">As aulas são ao vivo ou gravadas?<span class="fq-i"></span></button>
-      <div class="fq-a"><p>São 95 aulas em vídeo, gravadas, liberadas na plataforma Talks aos poucos: 4 aulas novas toda segunda, às 12h. Você assiste no seu horário, quantas vezes quiser, até o dia da prova.</p></div>
+      <div class="fq-a"><p>São 95 aulas em vídeo, gravadas, liberadas na plataforma Talks aos poucos: aulas novas toda segunda, às 12h. Você assiste no seu horário, quantas vezes quiser, até o dia da prova.</p></div>
     </div>
     <div class="fq">
       <button class="fq-q">Quando as aulas começam e até quando vão?<span class="fq-i"></span></button>
-      <div class="fq-a"><p>A primeira liberação é em 04/01/2027 e a última em 14/06/2027: são 24 semanas de aulas novas. As questões e os flashcards de cada temática entram junto com as aulas dela, toda segunda às 12h.</p></div>
+      <div class="fq-a"><p>A primeira liberação é em 04/01/2027 e a última em 14/06/2027, com aulas novas toda segunda, às 12h. As questões e os flashcards de cada temática entram junto com as aulas dela.</p></div>
     </div>
     <div class="fq">
       <button class="fq-q">O curso tem simulados?<span class="fq-i"></span></button>
@@ -854,7 +851,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     </div>
     <div class="fq">
       <button class="fq-q">Dá tempo de estudar com plantão?<span class="fq-i"></span></button>
-      <div class="fq-a"><p>O cronograma foi desenhado exatamente para isso. São 4 aulas novas por semana, sempre às segundas, com duração pensada para caber entre plantões, e o conteúdo é priorizado pela análise das provas anteriores — você não perde tempo com o que raramente cai.</p></div>
+      <div class="fq-a"><p>O cronograma foi desenhado exatamente para isso. As aulas novas chegam sempre às segundas, com duração pensada para caber entre plantões, e o conteúdo é priorizado pela análise das provas anteriores — você não perde tempo com o que raramente cai.</p></div>
     </div>
     <div class="fq">
       <button class="fq-q">Como faço para pagar e em quantas vezes?<span class="fq-i"></span></button>
