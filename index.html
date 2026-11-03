@@ -397,12 +397,12 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   <div class="nav-row">
     <a href="#hero" aria-label="Ped Talks"><img src="logo-pedtalks.png" alt="Ped Talks" class="nav-logo"></a>
     <div class="nav-links">
+      <a href="#pricing">Investimento</a>
       <a href="#curso">O curso</a>
       <a href="#prova">A prova</a>
       <a href="#estrutura">Estrutura</a>
       <a href="#ementa">Ementa</a>
       <a href="#professoras">Professoras</a>
-      <a href="#pricing">Investimento</a>
       <a href="#faq">Dúvidas</a>
     </div>
     <div class="nav-r">
@@ -413,12 +413,12 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   </div>
 </nav>
 <div id="mob">
+  <a href="#pricing">Investimento</a>
   <a href="#curso">O curso</a>
   <a href="#prova">A prova</a>
   <a href="#estrutura">Estrutura</a>
   <a href="#ementa">Ementa</a>
   <a href="#professoras">Professoras</a>
-  <a href="#pricing">Investimento</a>
   <a href="#faq">Dúvidas</a>
   <a href="#pricing" class="btn btn-primary">Garantir minha vaga</a>
 </div>
@@ -476,6 +476,53 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
 <div id="tagline">
   <p class="tlt">A preparação começa com <em>estratégia</em>, não com pressa.</p>
 </div>
+
+<!-- ═══ PRICING ═══ -->
+<!-- Logo depois do hero, de propósito: o contador do lote é o gatilho de urgência. -->
+<section id="pricing" class="sec">
+  <div class="sec-hd" data-r>
+    <span class="eyebrow">Investimento</span>
+    <h2>Garanta a sua vaga</h2>
+    <p>Matrícula única, acesso até o dia da prova. Sem renovação, sem surpresa.</p>
+  </div>
+  <!-- Valores e datas dos lotes ficam na var LOTES do <script>. O HTML já vem com o
+       Lançamento preenchido; o script troca pelo lote do dia e monta a régua de lotes. -->
+  <div class="lotes" id="lotes" data-r aria-label="Lotes de inscrição"></div>
+  <div class="plans">
+    <article class="plan hot" id="plano-tep" data-r data-d="1">
+      <span class="plan-flag" id="lote-flag">Lote atual: Lançamento</span>
+      <div class="plan-head">
+        <div class="plan-name">Preparatório</div>
+        <div class="plan-t">TEP</div>
+        <p class="plan-sub">Para conquistar o Título de Especialista em Pediatria e o registro do RQE no seu CRM.</p>
+        <div class="plan-price">
+          <div class="plan-x">6x de</div>
+          <div class="plan-v"><span id="lote-parcela">R$&nbsp;416<small>,65</small></span><span class="plan-sj">sem juros</span></div>
+          <div class="plan-cash">ou R$ <span id="lote-total">2.499,90</span> à vista</div>
+        </div>
+        <div class="cd" id="cd" role="timer">
+          <div class="cd-l">Este valor acaba em</div>
+          <div class="cd-row">
+            <div class="cd-u"><b>--</b><span>dias</span></div>
+            <div class="cd-u"><b>--</b><span>horas</span></div>
+            <div class="cd-u"><b>--</b><span>min</span></div>
+            <div class="cd-u"><b>--</b><span>seg</span></div>
+          </div>
+          <p class="cd-prox" id="cd-prox"></p>
+        </div>
+        <a href="#" data-link="tep" class="btn btn-primary btn-full">Quero meu RQE</a>
+      </div>
+      <ul>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Grade completa da Pediatria, do começo ao fim</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Aulas semanais até o dia da prova</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Banco de questões comentadas</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Flashcards de revisão</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>E-book de revisão final</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Acesso à plataforma Talks até o dia da prova</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
 <!-- ═══ O CURSO ═══ -->
 <section id="curso" class="arc">
@@ -673,52 +720,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
       <div class="dep-stars"><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg><svg viewBox="0 0 24 24"><path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21l1.2-6.8-5-4.9 6.9-1z"/></svg></div>
       <p>“O banco de questões e os flashcards salvaram a minha reta final. Nas duas últimas semanas eu só revisei por eles e cheguei na prova sem aquela sensação de que faltava alguma coisa.”</p>
       <div class="dep-who"><div class="dep-av">JP</div><div><div class="dep-n">Juliana P.</div><div class="dep-r">Aprovada em Clínica Médica · Clinic Talks</div></div></div>
-    </article>
-  </div>
-</section>
-
-<!-- ═══ PRICING ═══ -->
-<section id="pricing" class="sec">
-  <div class="sec-hd" data-r>
-    <span class="eyebrow">Investimento</span>
-    <h2>Garanta a sua vaga</h2>
-    <p>Matrícula única, acesso até o dia da prova. Sem renovação, sem surpresa.</p>
-  </div>
-  <!-- Valores e datas dos lotes ficam na var LOTES do <script>. O HTML já vem com o
-       Lançamento preenchido; o script troca pelo lote do dia e monta a régua de lotes. -->
-  <div class="lotes" id="lotes" data-r aria-label="Lotes de inscrição"></div>
-  <div class="plans">
-    <article class="plan hot" id="plano-tep" data-r data-d="1">
-      <span class="plan-flag" id="lote-flag">Lote atual: Lançamento</span>
-      <div class="plan-head">
-        <div class="plan-name">Preparatório</div>
-        <div class="plan-t">TEP</div>
-        <p class="plan-sub">Para conquistar o Título de Especialista em Pediatria e o registro do RQE no seu CRM.</p>
-        <div class="plan-price">
-          <div class="plan-x">6x de</div>
-          <div class="plan-v"><span id="lote-parcela">R$&nbsp;416<small>,65</small></span><span class="plan-sj">sem juros</span></div>
-          <div class="plan-cash">ou R$ <span id="lote-total">2.499,90</span> à vista</div>
-        </div>
-        <div class="cd" id="cd" role="timer">
-          <div class="cd-l">Este valor acaba em</div>
-          <div class="cd-row">
-            <div class="cd-u"><b>--</b><span>dias</span></div>
-            <div class="cd-u"><b>--</b><span>horas</span></div>
-            <div class="cd-u"><b>--</b><span>min</span></div>
-            <div class="cd-u"><b>--</b><span>seg</span></div>
-          </div>
-          <p class="cd-prox" id="cd-prox"></p>
-        </div>
-        <a href="#" data-link="tep" class="btn btn-primary btn-full">Quero meu RQE</a>
-      </div>
-      <ul>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Grade completa da Pediatria, do começo ao fim</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Aulas semanais até o dia da prova</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Banco de questões comentadas</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Flashcards de revisão</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>E-book de revisão final</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Acesso à plataforma Talks até o dia da prova</li>
-      </ul>
     </article>
   </div>
 </section>
