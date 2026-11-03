@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Preparatório TEP 2027 | Ped Talks</title>
-<meta name="description" content="Preparatório para o Título de Especialista em Pediatria (TEP). 100% online, aulas semanais até o dia da prova, banco de questões e flashcards, com Rebecca Azulay e Natália Dias.">
+<meta name="description" content="Preparatório para o Título de Especialista em Pediatria (TEP). 100% online: 95 aulas em vídeo liberadas toda segunda, 950 questões, 1.900 flashcards e 4 simulados, com Rebecca Azulay e Natália Dias.">
 <meta property="og:title" content="Preparatório TEP 2027 | Ped Talks">
 <meta property="og:description" content="A preparação completa para o Título de Especialista em Pediatria. Estude com estratégia, não com pressa.">
 <meta property="og:type" content="website">
@@ -24,11 +24,11 @@
 
   (os preços JÁ SÃO REAIS: 4 lotes de 20/11/2026 a 01/02/2027, em 6x sem
    juros — ficam na var LOTES do <script>; o lote do dia entra sozinho)
-  • Datas:         início da turma 08/03/2027
-                   inscrições até 05/03/2027 · prova nov/2027
-  • Números:       nº de aulas, horas, questões e flashcards no hero
-                   e na seção de estrutura (NÃO usar nº de aprovados
-                   nem tempo de casa — o curso começa em 2027)
+  (os números do curso JÁ SÃO REAIS, confirmados pela diretoria em 03/11/2026:
+   95 aulas, 4 por semana toda segunda 12h, 24 semanas de 04/01 a 14/06/2027,
+   950 questões, 1.900 flashcards, 4 simulados. NÃO usar nº de aprovados nem
+   tempo de casa — o curso começa em 2027)
+  • Datas:         inscrições até 05/03/2027 · prova nov/2027
   • Depoimentos:   os 3 são fictícios; devem vir de alunos de OUTROS
                    preparatórios do Grupo Talks, com a prova indicada
   (o currículo acadêmico das professoras JÁ É REAL — não mexer)
@@ -80,6 +80,11 @@ ul{list-style:none}
 .divider{height:1px;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent)}
 .bl{color:var(--blue-l)}
 .center{text-align:center}
+.sprite{position:absolute;width:0;height:0;overflow:hidden}
+
+/* chip de ícone (símbolos do sprite no topo do <body>) */
+.ic{flex-shrink:0;width:40px;height:40px;border-radius:12px;background:rgba(0,116,242,.14);border:1px solid rgba(0,116,242,.3);display:flex;align-items:center;justify-content:center;transition:background .2s,border-color .2s}
+.ic svg{width:20px;height:20px;fill:none;stroke:var(--blue-l);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;transition:stroke .2s}
 
 /* arco de luz azul — assinatura visual do Ped Talks */
 .arc{position:relative;overflow:hidden}
@@ -109,7 +114,7 @@ ul{list-style:none}
 [data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}
 [data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}
 [data-d="5"]{transition-delay:.40s}[data-d="6"]{transition-delay:.48s}
-@media (prefers-reduced-motion:reduce){[data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}}
+@media (prefers-reduced-motion:reduce){[data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.flt{animation:none}.tp-bar{transform:none;transition:none}}
 
 /* ═══ NAVBAR ══════════════════════════════════════════════════ */
 #nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 24px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
@@ -153,8 +158,11 @@ ul{list-style:none}
 .hero-ctas{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:44px}
 .hero-stats{display:grid;grid-template-columns:1fr 1fr;gap:20px 30px;max-width:440px}
 .hst{padding-left:14px;border-left:2px solid rgba(0,116,242,.4)}
-.hst-n{font-size:26px;font-weight:900;color:var(--blue);letter-spacing:-1px;line-height:1}
+.hst-n{font-size:26px;font-weight:900;color:var(--blue);letter-spacing:-1px;line-height:1;font-variant-numeric:tabular-nums}
 .hst-l{font-size:12px;color:var(--gm);font-weight:500;margin-top:4px;line-height:1.35}
+
+/* selo sobre a foto balança devagar */
+@keyframes bob{50%{translate:0 -14px}}
 
 /* foto das professoras — moldura com scrim, sem recorte sujo */
 .hero-vis{position:relative}
@@ -166,7 +174,7 @@ ul{list-style:none}
 .pname::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue)}
 .pname span{color:var(--gm);font-weight:500}
 .photo-glow{position:absolute;inset:auto 0 -60px 0;height:300px;background:radial-gradient(ellipse at 50% 100%,rgba(0,116,242,.3) 0%,transparent 70%);z-index:-1;pointer-events:none}
-.flt{position:absolute;z-index:3;padding:14px 18px;border-radius:16px;background:rgba(10,11,15,.88);border:1px solid var(--gbd);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 14px 42px rgba(0,0,0,.5)}
+.flt{position:absolute;z-index:3;padding:14px 18px;border-radius:16px;background:rgba(10,11,15,.88);border:1px solid var(--gbd);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 14px 42px rgba(0,0,0,.5);animation:bob 6s ease-in-out infinite}
 .flt-label{font-size:10.5px;color:var(--gm);font-weight:500;letter-spacing:.4px;text-transform:uppercase}
 .flt-val{font-size:21px;font-weight:900;color:var(--white);letter-spacing:-.5px;line-height:1.15}
 .flt-val em{font-style:normal;color:var(--blue)}
@@ -186,12 +194,22 @@ ul{list-style:none}
 .trilha-n{font-size:clamp(48px,7vw,72px);font-weight:900;letter-spacing:-3px;line-height:1;margin:4px 0 16px;color:var(--blue)}
 .trilha-for{font-size:16px;color:var(--gl);line-height:1.6;margin-bottom:28px}
 .trilha-for strong{color:var(--white);font-weight:700}
-.trilha-meta{display:flex;flex-direction:column;gap:0}
-.tm{display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:14px;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.08)}
-.tm:last-child{border-bottom:none;padding-bottom:0}
-.tm:first-child{padding-top:0}
-.tm span:first-child{color:var(--gm)}
-.tm span:last-child{color:var(--white);font-weight:600;text-align:right}
+/* fatos do curso em blocos com ícone (no lugar das linhas de tabela) */
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.facts li{display:flex;align-items:center;gap:12px;padding:14px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:14.5px;font-weight:700;line-height:1.3;color:var(--white);transition:border-color .2s,transform .2s}
+.facts li:hover{border-color:rgba(0,116,242,.45);transform:translateY(-2px)}
+.facts small{display:block;font-size:10.5px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--gm);margin-bottom:3px}
+
+/* números do curso (confirmados pela diretoria) + faixa da liberação gradual */
+.nums{max-width:960px;margin:20px auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.num{position:relative;padding:24px 24px 22px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--gbd);transition:transform .25s,border-color .25s}
+.num:hover{transform:translateY(-4px);border-color:rgba(0,116,242,.4)}
+.num .ic{position:absolute;top:20px;right:20px}
+.num-n{font-size:clamp(36px,4.6vw,50px);font-weight:900;letter-spacing:-1.5px;line-height:1;color:var(--blue);font-variant-numeric:tabular-nums}
+.num-l{font-size:14.5px;color:var(--gl);line-height:1.5;margin-top:10px}
+.lib{max-width:960px;margin:14px auto 0;display:flex;align-items:center;gap:14px;padding:16px 22px;border-radius:16px;background:linear-gradient(90deg,var(--blue-d),var(--blue));box-shadow:0 0 34px rgba(0,116,242,.28);font-size:14.5px;line-height:1.5;color:#fff}
+.lib svg{flex-shrink:0;width:22px;height:22px;fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.lib strong{font-weight:800}
 
 /* ═══ VÍDEO ═══════════════════════════════════════════════════ */
 #video{padding:0 24px 96px}
@@ -204,17 +222,35 @@ ul{list-style:none}
 .play-ring svg{width:26px;height:26px;fill:#fff;margin-left:4px}
 .vid-ph p{font-size:14px;color:var(--gm)}
 
-/* ═══ PROVAS (comparativo) ════════════════════════════════════ */
-.cmp{max-width:900px;margin:0 auto;border-radius:var(--r);overflow:hidden;border:1px solid var(--gbd)}
-.cmp-scroll{overflow-x:auto}
-.cmp table{width:100%;border-collapse:collapse;min-width:620px}
-.cmp th,.cmp td{padding:17px 22px;text-align:left;font-size:14.5px;border-bottom:1px solid rgba(255,255,255,.08)}
-.cmp thead th{background:rgba(0,116,242,.1);font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--white)}
-.cmp thead th:first-child{color:var(--gm)}
-.cmp tbody th{font-weight:600;color:var(--gm);width:28%;white-space:nowrap}
-.cmp td{color:var(--gl)}
-.cmp tbody tr:last-child th,.cmp tbody tr:last-child td{border-bottom:none}
-.cmp tbody tr:hover td,.cmp tbody tr:hover th{background:rgba(255,255,255,.025)}
+/* ═══ ENTENDA O TEP (cards no lugar da tabela) ════════════════ */
+.tep{max-width:1060px;margin:0 auto;display:grid;gap:14px}
+.tep-row{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tc{padding:24px 22px;border-radius:20px;background:linear-gradient(160deg,rgba(255,255,255,.055),rgba(255,255,255,.015));border:1px solid var(--gbd);transition:transform .25s,border-color .25s}
+.tc:hover{transform:translateY(-4px);border-color:rgba(0,116,242,.4)}
+.tc h3{font-size:16px;margin:16px 0 6px}
+.tc p{font-size:14px;color:var(--gm);line-height:1.6}
+.tep-prova{display:grid;grid-template-columns:2fr 1fr;gap:14px}
+.tp{padding:28px;border-radius:20px;background:linear-gradient(150deg,rgba(0,116,242,.14),rgba(255,255,255,.02) 60%);border:1px solid rgba(0,116,242,.3)}
+.tp-hd{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:22px}
+.tp-hd h3{font-size:19px}
+.tp-chips{display:flex;gap:8px;flex-wrap:wrap}
+.tp-chips span{padding:5px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:12px;font-weight:600;color:var(--gl)}
+.tp-split{display:flex;gap:10px}
+.tp-part{display:flex;flex-direction:column;gap:5px;min-width:0}
+.tp-part:first-child{flex:6}
+.tp-part:last-child{flex:4}
+/* barra proporcional ao peso de cada prova; cresce quando o card aparece */
+.tp-bar{display:block;height:10px;border-radius:999px;background:var(--blue);margin-bottom:8px;transform:scaleX(0);transform-origin:left;transition:transform .9s cubic-bezier(.2,.7,.2,1) .25s}
+.tp-part:last-child .tp-bar{background:var(--blue-l);transition-delay:.45s}
+.tp.on .tp-bar{transform:none}
+.tp-w{font-size:11.5px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--blue-l)}
+.tp-part b{font-size:16px;color:var(--white)}
+.tp-part p{font-size:13.5px;color:var(--gm);line-height:1.5}
+.ta{padding:28px;border-radius:20px;background:linear-gradient(150deg,var(--blue-d),var(--blue));box-shadow:0 0 40px rgba(0,116,242,.25);display:flex;flex-direction:column;justify-content:center}
+.ta-k{font-size:11.5px;font-weight:700;letter-spacing:1.4px;text-transform:uppercase;color:rgba(255,255,255,.85)}
+.ta-n{font-size:76px;font-weight:900;letter-spacing:-3px;line-height:1;color:#fff;margin:6px 0 10px;font-variant-numeric:tabular-nums}
+.ta p{font-size:14px;color:rgba(255,255,255,.92);line-height:1.5}
+.tep .lib{max-width:none;margin:0}
 
 /* ═══ ESTRUTURA ═══════════════════════════════════════════════ */
 .feat{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1060px;margin:0 auto}
@@ -226,11 +262,14 @@ ul{list-style:none}
 .fcard p{font-size:14.5px;color:var(--gm);line-height:1.6}
 
 /* ═══ EMENTA ══════════════════════════════════════════════════ */
-.ement{max-width:880px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.emod{padding:18px 22px;border-radius:16px;background:rgba(255,255,255,.035);border:1px solid var(--gbd);display:flex;align-items:center;gap:14px;transition:border-color .2s,background .2s}
-.emod:hover{border-color:rgba(0,116,242,.4);background:rgba(0,116,242,.06)}
-.emod-n{flex-shrink:0;width:30px;height:30px;border-radius:9px;background:rgba(0,116,242,.16);color:var(--blue-l);font-size:12px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.emod span{font-size:14.5px;font-weight:600;color:var(--gl)}
+/* blocos com ícone por tema; a última linha fica centralizada */
+.ement{max-width:1060px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:center;gap:12px}
+.emod{flex:0 1 calc(25% - 9px);position:relative;padding:20px 18px 18px;border-radius:18px;background:rgba(255,255,255,.035);border:1px solid var(--gbd);display:flex;flex-direction:column;align-items:flex-start;gap:14px;transition:border-color .2s,background .2s,transform .2s}
+.emod:hover{border-color:rgba(0,116,242,.45);background:rgba(0,116,242,.07);transform:translateY(-4px)}
+.emod:hover .ic{background:var(--blue);border-color:var(--blue)}
+.emod:hover .ic svg{stroke:#fff}
+.emod-n{position:absolute;top:18px;right:18px;font-size:12px;font-weight:800;letter-spacing:.5px;color:rgba(255,255,255,.22)}
+.emod-t{font-size:14.5px;font-weight:700;line-height:1.35;color:var(--gl)}
 .ement-note{max-width:880px;margin:26px auto 0;text-align:center;font-size:13.5px;color:var(--gm)}
 
 /* ═══ PROFESSORAS ═════════════════════════════════════════════ */
@@ -359,30 +398,36 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .hero-desc{max-width:none}
   .hero-vis{max-width:460px;margin:0 auto;width:100%}
   .flt-2{right:-10px}
-  .feat,.deps{grid-template-columns:1fr 1fr}
+  .feat,.deps,.tep-row{grid-template-columns:1fr 1fr}
+  .emod{flex-basis:calc(33.333% - 8px)}
 }
 @media (max-width:760px){
   .sec,.sec-sm{padding:72px 20px}
   #hero{padding:120px 20px 70px;min-height:auto}
-  .profs,.ement,.feat,.deps{grid-template-columns:1fr}
+  .profs,.feat,.deps{grid-template-columns:1fr}
+  .emod{flex-basis:calc(50% - 6px);padding:16px 14px}
+  .emod-n{top:14px;right:14px}
+  .emod-t{font-size:13.5px}
+  .facts{gap:10px}
+  .facts li{flex-direction:column;align-items:flex-start;gap:10px;padding:14px 12px;font-size:14px}
   .lotes{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+  .nums{grid-template-columns:1fr 1fr;gap:10px}
+  .num{padding:18px 16px}
+  .num .ic{position:static;margin-bottom:14px}
+  .num-l{font-size:13.5px}
+  .lib{align-items:flex-start;padding:16px 18px;font-size:14px}
   .lote{padding:14px 15px}
   .curso-card,.plan{grid-template-columns:1fr;gap:28px;padding:32px 26px}
   .curso-l .btn{margin-top:4px;width:100%}
-  .hero-stats{gap:18px 20px;max-width:none}
-  .hero-ctas .btn{flex:1;min-width:150px}
+  .hero-stats{gap:18px 20px;max-width:none}  .hero-ctas .btn{flex:1;min-width:150px}
   #sticky{display:flex}
   body{padding-bottom:78px}
   .foot{flex-direction:column}
   .foot-nav{gap:36px}
   #curso,#video{padding-left:20px;padding-right:20px}
-  /* Entenda o TEP: no celular cada linha vira bloco (rótulo em cima, texto embaixo) — sem rolagem lateral cortando o texto */
-  .cmp table{min-width:0}
-  .cmp tbody tr{display:block;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08)}
-  .cmp tbody tr:last-child{border-bottom:none}
-  .cmp tbody th,.cmp td{display:block;width:auto;padding:0;border-bottom:none}
-  .cmp tbody th{white-space:normal;font-size:11.5px;letter-spacing:.8px;text-transform:uppercase;margin-bottom:6px}
-  .cmp td{line-height:1.55}
+  .tep-row,.tep-prova{grid-template-columns:1fr}
+  .tp,.ta{padding:24px 22px}
+  .ta-n{font-size:64px}
 }
 @media (max-width:420px){
   .flt{display:none}
@@ -392,13 +437,48 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
 </head>
 <body>
 
+<!-- ═══ ÍCONES ═══ sprite SVG único: usar com <svg><use href="#i-nome"/></svg>.
+     O traço e a cor vêm do CSS de quem usa (.ic svg, .lib svg). -->
+<svg class="sprite" aria-hidden="true">
+  <symbol id="i-play" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="3"/><path d="m10 9 5 3-5 3z"/></symbol>
+  <symbol id="i-cal-plus" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18M12 13v6M9 16h6"/></symbol>
+  <symbol id="i-hourglass" viewBox="0 0 24 24"><path d="M5 22h14M5 2h14"/><path d="M17 22v-4.17a2 2 0 0 0-.59-1.42L12 12l-4.41 4.41A2 2 0 0 0 7 17.83V22"/><path d="M7 2v4.17a2 2 0 0 0 .59 1.42L12 12l4.41-4.41A2 2 0 0 0 17 6.17V2"/></symbol>
+  <symbol id="i-check-sq" viewBox="0 0 24 24"><path d="m9 11 3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></symbol>
+  <symbol id="i-cards" viewBox="0 0 24 24"><rect x="2" y="7" width="15" height="13" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-2"/></symbol>
+  <symbol id="i-target" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1"/></symbol>
+  <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+  <symbol id="i-pen" viewBox="0 0 24 24"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></symbol>
+  <symbol id="i-clipboard" viewBox="0 0 24 24"><rect x="8" y="2" width="8" height="4" rx="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="m9 14 2 2 4-4"/></symbol>
+  <symbol id="i-award" viewBox="0 0 24 24"><circle cx="12" cy="8" r="6"/><path d="M15.5 13 17 22l-5-3-5 3 1.5-9"/></symbol>
+  <symbol id="i-unlock" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 9.9-1"/></symbol>
+  <symbol id="i-card" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 10h20M6 15h4"/></symbol>
+  <symbol id="i-steth" viewBox="0 0 24 24"><path d="M11 2v2M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></symbol>
+  <symbol id="i-badge" viewBox="0 0 24 24"><path d="M3.85 8.62a4 4 0 0 1 4.78-4.77 4 4 0 0 1 6.74 0 4 4 0 0 1 4.78 4.78 4 4 0 0 1 0 6.74 4 4 0 0 1-4.77 4.78 4 4 0 0 1-6.75 0 4 4 0 0 1-4.78-4.77 4 4 0 0 1 0-6.76Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <!-- temas da ementa -->
+  <symbol id="i-baby" viewBox="0 0 24 24"><path d="M9 12h.01M15 12h.01"/><path d="M10 16c.5.3 1.2.5 2 .5s1.5-.2 2-.5"/><path d="M19 6.3a9 9 0 0 1 1.8 3.9 2 2 0 0 1 0 3.6 9 9 0 0 1-17.6 0 2 2 0 0 1 0-3.6A9 9 0 0 1 12 3c2 0 3.5 1.1 3.5 2.5s-.9 2.5-2 2.5c-.8 0-1.5-.4-1.5-1"/></symbol>
+  <symbol id="i-bottle" viewBox="0 0 24 24"><path d="M8 2h8"/><path d="M9 2v2.79a4 4 0 0 1-.67 2.22l-.66.98A4 4 0 0 0 7 10.21V20a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2v-9.79a4 4 0 0 0-.67-2.22l-.66-.98A4 4 0 0 1 15 4.79V2"/><path d="M7 15a6.5 6.5 0 0 1 5 0 6.5 6.5 0 0 0 5 0"/></symbol>
+  <symbol id="i-grow" viewBox="0 0 24 24"><path d="M22 7 13.5 15.5l-5-5L2 17"/><path d="M16 7h6v6"/></symbol>
+  <symbol id="i-syringe" viewBox="0 0 24 24"><path d="m18 2 4 4M17 7l3-3"/><path d="M19 9 8.7 19.3a2.4 2.4 0 0 1-3.4 0l-.6-.6a2.4 2.4 0 0 1 0-3.4L15 5"/><path d="m9 11 4 4M5 19l-3 3M14 4l6 6"/></symbol>
+  <symbol id="i-thermo" viewBox="0 0 24 24"><path d="M14 4v10.54a4 4 0 1 1-4 0V4a2 2 0 0 1 4 0Z"/></symbol>
+  <symbol id="i-wind" viewBox="0 0 24 24"><path d="M17.7 7.7a2.5 2.5 0 1 1 1.8 4.3H2"/><path d="M9.6 4.6A2 2 0 1 1 11 8H2"/><path d="M12.6 19.4A2 2 0 1 0 14 16H2"/></symbol>
+  <symbol id="i-apple" viewBox="0 0 24 24"><path d="M12 6.5V3a1 1 0 0 1 1-1"/><path d="M18.24 21A15 15 0 0 0 22 11a6 6 0 0 0-10-4.47A6 6 0 0 0 2 11a15.1 15.1 0 0 0 3.76 10 3 3 0 0 0 3.65.65 5.5 5.5 0 0 1 5.18 0A3 3 0 0 0 18.24 21"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M3.22 12H9.5l.5-1 2 4.5 2-7 1.5 3.5h5.27"/></symbol>
+  <symbol id="i-drop" viewBox="0 0 24 24"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5C6 11.1 5 13 5 15a7 7 0 0 0 7 7Z"/></symbol>
+  <symbol id="i-flask" viewBox="0 0 24 24"><path d="M10 2v7.53a2 2 0 0 1-.21.9L4.72 20.55a1 1 0 0 0 .9 1.45h12.76a1 1 0 0 0 .9-1.45l-5.07-10.12a2 2 0 0 1-.21-.9V2"/><path d="M8.5 2h7M7 16h10"/></symbol>
+  <symbol id="i-micro" viewBox="0 0 24 24"><path d="M6 18h8M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></symbol>
+  <symbol id="i-brain" viewBox="0 0 24 24"><path d="M12 5a3 3 0 1 0-6 .13 4 4 0 0 0-2.53 5.77 4 4 0 0 0 .56 6.59A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 6 .13 4 4 0 0 1 2.53 5.77 4 4 0 0 1-.56 6.59A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4M12 5v13"/></symbol>
+  <symbol id="i-siren" viewBox="0 0 24 24"><path d="M7 18v-6a5 5 0 1 1 10 0v6"/><path d="M5 21a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-1a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2Z"/><path d="M21 12h1M18.5 4.5 18 5M2 12h1M12 2v1M4.93 4.93l.7.7M12 12v6"/></symbol>
+  <symbol id="i-dna" viewBox="0 0 24 24"><path d="M2 15c6.67-6 13.33 0 20-6"/><path d="M9 22c1.8-2 2.52-4 2.8-6M15 2c-1.8 2-2.52 4-2.8 6"/><path d="m17 6-2.9-2.9M7 18l2.9 2.9M6.5 12.5l1 1M16.5 10.5l1 1M10 16l1.5 1.5M14 8l-1.5-1.5M20 9l.9.9M3.1 14.1 4 15"/></symbol>
+</svg>
+
 <!-- ═══ NAVBAR ═══ -->
 <nav id="nav">
   <div class="nav-row">
     <a href="#hero" aria-label="Ped Talks"><img src="logo-pedtalks.png" alt="Ped Talks" class="nav-logo"></a>
     <div class="nav-links">
-      <a href="#pricing">Investimento</a>
       <a href="#curso">O curso</a>
+      <a href="#pricing">Investimento</a>
       <a href="#prova">A prova</a>
       <a href="#estrutura">Estrutura</a>
       <a href="#ementa">Ementa</a>
@@ -413,8 +493,8 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   </div>
 </nav>
 <div id="mob">
-  <a href="#pricing">Investimento</a>
   <a href="#curso">O curso</a>
+  <a href="#pricing">Investimento</a>
   <a href="#prova">A prova</a>
   <a href="#estrutura">Estrutura</a>
   <a href="#ementa">Ementa</a>
@@ -434,10 +514,10 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
         <span class="hero-main">TEP</span>
         <span class="hero-post">Título de Especialista em Pediatria</span>
       </h1>
-      <p class="hero-desc">A preparação completa para a prova da SBP: <strong>conteúdo guiado pela análise das provas anteriores</strong>, aulas semanais até o dia da prova e professoras tituladas e atuantes em serviço.</p>
+      <p class="hero-desc">A preparação completa para a prova da SBP: <strong>conteúdo guiado pela análise das provas anteriores</strong>, 4 aulas novas toda segunda e professoras tituladas e atuantes em serviço.</p>
       <div class="hero-tags">
         <span class="htag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>100% online</span>
-        <span class="htag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Aulas semanais</span>
+        <span class="htag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Aulas novas toda segunda</span>
         <span class="htag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Banco de questões e flashcards</span>
         <span class="htag"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round"><path d="M20 6 9 17l-5-5"/></svg>Acesso até o dia da prova</span>
       </div>
@@ -446,11 +526,11 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
         <a href="#" data-link="wpp" class="btn btn-outline">Falar no WhatsApp</a>
       </div>
       <div class="hero-stats">
-        <!-- FICTICIO: todos os números abaixo (volume de conteúdo, não resultados) -->
-        <div class="hst"><div class="hst-n">+80</div><div class="hst-l">aulas gravadas</div></div>
-        <div class="hst"><div class="hst-n">+120h</div><div class="hst-l">de conteúdo</div></div>
-        <div class="hst"><div class="hst-n">+1.500</div><div class="hst-l">questões comentadas</div></div>
-        <div class="hst"><div class="hst-n">+600</div><div class="hst-l">flashcards</div></div>
+        <!-- Números confirmados pela diretoria (volume de conteúdo, não resultados) -->
+        <div class="hst"><div class="hst-n" data-count="95">95</div><div class="hst-l">aulas em vídeo</div></div>
+        <div class="hst"><div class="hst-n" data-count="950">950</div><div class="hst-l">questões no banco</div></div>
+        <div class="hst"><div class="hst-n" data-count="1900">1.900</div><div class="hst-l">flashcards</div></div>
+        <div class="hst"><div class="hst-n" data-count="4">4</div><div class="hst-l">simulados</div></div>
       </div>
     </div>
 
@@ -464,9 +544,8 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
         </div>
       </div>
       <div class="flt flt-2">
-        <div class="flt-label">Carga horária</div>
-        <!-- FICTICIO: carga -->
-        <div class="flt-val">+120<em>h</em></div>
+        <div class="flt-label">Aulas novas toda</div>
+        <div class="flt-val">Segunda, <em>12h</em></div>
       </div>
     </div>
   </div>
@@ -477,8 +556,67 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   <p class="tlt">A preparação começa com <em>estratégia</em>, não com pressa.</p>
 </div>
 
+<!-- ═══ O CURSO ═══ -->
+<section id="curso" class="arc">
+  <div class="sec-hd" data-r>
+    <span class="eyebrow">O curso</span>
+    <h2>A preparação completa<br>para o Título</h2>
+    <p>Toda a Pediatria coberta na profundidade que a prova da SBP exige, numa trilha única, do começo ao fim — sem você precisar montar cronograma nem decidir o que estudar primeiro.</p>
+  </div>
+
+  <article class="curso-card" data-r data-d="1">
+    <div class="curso-l">
+      <span class="trilha-tag">Preparatório</span>
+      <div class="trilha-n">TEP</div>
+      <p class="trilha-for">Para quem busca o <strong>Título de Especialista em Pediatria</strong> e o registro do RQE no CRM.</p>
+      <a href="#pricing" class="btn btn-primary">Quero meu RQE</a>
+    </div>
+    <div class="curso-r">
+      <!-- Data de início confirmada pela diretoria; o preço vem da var LOTES.
+           FICTICIO: prazo de inscrição e mês da prova -->
+      <ul class="facts">
+        <li><span class="ic"><svg><use href="#i-cal"/></svg></span><span><small>Primeira aula</small>04/01/2027</span></li>
+        <li><span class="ic"><svg><use href="#i-pen"/></svg></span><span><small>Inscrições até</small>05/03/2027</span></li>
+        <li><span class="ic"><svg><use href="#i-clipboard"/></svg></span><span><small>Prova</small>Novembro/2027</span></li>
+        <li><span class="ic"><svg><use href="#i-award"/></svg></span><span><small>Banca</small>SBP / AMB</span></li>
+        <li><span class="ic"><svg><use href="#i-unlock"/></svg></span><span><small>Acesso</small>Até o dia da prova</span></li>
+        <li><span class="ic"><svg><use href="#i-card"/></svg></span><span><small>Investimento</small><span id="lote-resumo">6x R$ 416,65 sem juros</span></span></li>
+      </ul>
+    </div>
+  </article>
+
+  <!-- Números confirmados pela diretoria em 03/11/2026 (data-count: o número conta do zero ao aparecer) -->
+  <div class="nums">
+    <div class="num" data-r data-d="1"><span class="ic"><svg><use href="#i-play"/></svg></span><div class="num-n" data-count="95">95</div><p class="num-l">aulas em vídeo</p></div>
+    <div class="num" data-r data-d="2"><span class="ic"><svg><use href="#i-cal-plus"/></svg></span><div class="num-n" data-count="4">4</div><p class="num-l">aulas novas por semana, toda segunda às 12h</p></div>
+    <div class="num" data-r data-d="3"><span class="ic"><svg><use href="#i-hourglass"/></svg></span><div class="num-n" data-count="24">24</div><p class="num-l">semanas de liberação, de 04/01 a 14/06/2027</p></div>
+    <div class="num" data-r data-d="1"><span class="ic"><svg><use href="#i-check-sq"/></svg></span><div class="num-n" data-count="950">950</div><p class="num-l">questões no banco (10 por aula)</p></div>
+    <div class="num" data-r data-d="2"><span class="ic"><svg><use href="#i-cards"/></svg></span><div class="num-n" data-count="1900">1.900</div><p class="num-l">flashcards (20 por tema)</p></div>
+    <div class="num" data-r data-d="3"><span class="ic"><svg><use href="#i-target"/></svg></span><div class="num-n" data-count="4">4</div><p class="num-l">simulados, um a cada 6 semanas de aula</p></div>
+  </div>
+  <p class="lib" data-r><svg aria-hidden="true"><use href="#i-clock"/></svg><span><strong>Liberação gradual:</strong> questões e flashcards entram junto com as aulas de cada temática, toda segunda às 12h.</span></p>
+</section>
+
+<!-- ═══ VÍDEO ═══ -->
+<section id="video">
+  <div class="vid-max">
+    <div class="sec-hd" data-r style="margin-bottom:32px">
+      <span class="eyebrow">Conheça por dentro</span>
+      <h2>Veja como funciona</h2>
+    </div>
+    <div class="vid-frame" data-r data-d="1">
+      <!-- FICTICIO: trocar pelo ID real no <script> (VIDEO_ID) -->
+      <div class="vid-ph" id="vidbox">
+        <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+        <p>Clique para assistir à apresentação do <strong>Preparatório TEP</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ═══ PRICING ═══ -->
-<!-- Logo depois do hero, de propósito: o contador do lote é o gatilho de urgência. -->
+<!-- Logo depois do vídeo, de propósito: quem chega aqui já viu o curso, e o contador
+     do lote é o gatilho de urgência. -->
 <section id="pricing" class="sec">
   <div class="sec-hd" data-r>
     <span class="eyebrow">Investimento</span>
@@ -513,61 +651,15 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
         <a href="#" data-link="tep" class="btn btn-primary btn-full">Quero meu RQE</a>
       </div>
       <ul>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Grade completa da Pediatria, do começo ao fim</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Aulas semanais até o dia da prova</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Banco de questões comentadas</li>
-        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Flashcards de revisão</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>95 aulas em vídeo: toda a Pediatria, do começo ao fim</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>4 aulas novas por semana, toda segunda às 12h</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>950 questões no banco</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>1.900 flashcards de revisão</li>
+        <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>4 simulados ao longo do curso</li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>E-book de revisão final</li>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>Acesso à plataforma Talks até o dia da prova</li>
       </ul>
     </article>
-  </div>
-</section>
-
-<!-- ═══ O CURSO ═══ -->
-<section id="curso" class="arc">
-  <div class="sec-hd" data-r>
-    <span class="eyebrow">O curso</span>
-    <h2>A preparação completa<br>para o Título</h2>
-    <p>Toda a Pediatria coberta na profundidade que a prova da SBP exige, numa trilha única, do começo ao fim — sem você precisar montar cronograma nem decidir o que estudar primeiro.</p>
-  </div>
-
-  <article class="curso-card" data-r data-d="1">
-    <div class="curso-l">
-      <span class="trilha-tag">Preparatório</span>
-      <div class="trilha-n">TEP</div>
-      <p class="trilha-for">Para quem busca o <strong>Título de Especialista em Pediatria</strong> e o registro do RQE no CRM.</p>
-      <a href="#pricing" class="btn btn-primary">Quero meu RQE</a>
-    </div>
-    <div class="curso-r">
-      <div class="trilha-meta">
-        <!-- FICTICIO: datas e volume (o preço vem da var LOTES) -->
-        <div class="tm"><span>Início da turma</span><span>08/03/2027</span></div>
-        <div class="tm"><span>Inscrições até</span><span>05/03/2027</span></div>
-        <div class="tm"><span>Prova</span><span>Novembro/2027</span></div>
-        <div class="tm"><span>Banca</span><span>SBP / AMB</span></div>
-        <div class="tm"><span>Volume</span><span>Grade completa · +80 aulas</span></div>
-        <div class="tm"><span>Acesso</span><span>Até o dia da prova</span></div>
-        <div class="tm"><span>Investimento</span><span id="lote-resumo">6x R$ 416,65 sem juros</span></div>
-      </div>
-    </div>
-  </article>
-</section>
-
-<!-- ═══ VÍDEO ═══ -->
-<section id="video">
-  <div class="vid-max">
-    <div class="sec-hd" data-r style="margin-bottom:32px">
-      <span class="eyebrow">Conheça por dentro</span>
-      <h2>Veja como funciona</h2>
-    </div>
-    <div class="vid-frame" data-r data-d="1">
-      <!-- FICTICIO: trocar pelo ID real no <script> (VIDEO_ID) -->
-      <div class="vid-ph" id="vidbox">
-        <div class="play-ring"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-        <p>Clique para assistir à apresentação do <strong>Preparatório TEP</strong></p>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -578,21 +670,32 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <h2>Entenda o TEP</h2>
     <p>O que é a prova, quem pode fazer e o que ela dá no fim — para você entrar na preparação sabendo exatamente onde quer chegar.</p>
   </div>
-  <div class="cmp glass" data-r data-d="1">
-    <div class="cmp-scroll">
-      <table>
-        <tbody>
-          <!-- Dados do edital oficial do Exame Nacional para Obtenção do TEP (SBP). Conferir a cada novo edital. -->
-          <tr><th>O que é</th><td>O Título de Especialista em Pediatria, concedido pela Sociedade Brasileira de Pediatria (SBP) e pela Associação Médica Brasileira (AMB)</td></tr>
-          <tr><th>Para quem</th><td>Médico com CRM definitivo que comprove residência em Pediatria reconhecida pela CNRM, pós-graduação equivalente ou 6 anos de atuação exclusiva em Pediatria</td></tr>
-          <tr><th>Como é a prova</th><td>Duas provas no mesmo dia, 100% on-line, em 4 horas: teórico-prática com 4 a 5 questões discursivas sobre casos clínicos (peso 6) e teórica com 50 questões objetivas (peso 4)</td></tr>
-          <tr><th>Aprovação</th><td>Nota final igual ou maior que 60, sem ficar abaixo de 50% em nenhuma das duas provas</td></tr>
-          <tr><th>Resultado</th><td>Título de especialista e registro do RQE no seu CRM</td></tr>
-          <tr><th>Quando acontece</th><td>Uma vez por ano, na data definida pelo edital da SBP</td></tr>
-          <tr><th>Como a gente prepara</th><td><strong style="color:var(--blue-l)">Grade completa</strong> — toda a Pediatria na profundidade que a banca cobra, priorizada pela análise das provas anteriores</td></tr>
-        </tbody>
-      </table>
+  <!-- Dados do edital oficial do Exame Nacional para Obtenção do TEP (SBP). Conferir a cada novo edital. -->
+  <div class="tep">
+    <div class="tep-row">
+      <article class="tc" data-r data-d="1"><span class="ic"><svg><use href="#i-award"/></svg></span><h3>O que é</h3><p>O Título de Especialista em Pediatria, concedido pela Sociedade Brasileira de Pediatria (SBP) e pela Associação Médica Brasileira (AMB)</p></article>
+      <article class="tc" data-r data-d="2"><span class="ic"><svg><use href="#i-steth"/></svg></span><h3>Para quem</h3><p>Médico com CRM definitivo que comprove residência em Pediatria reconhecida pela CNRM, pós-graduação equivalente ou 6 anos de atuação exclusiva em Pediatria</p></article>
+      <article class="tc" data-r data-d="3"><span class="ic"><svg><use href="#i-badge"/></svg></span><h3>Resultado</h3><p>Título de especialista e registro do RQE no seu CRM</p></article>
+      <article class="tc" data-r data-d="4"><span class="ic"><svg><use href="#i-cal"/></svg></span><h3>Quando acontece</h3><p>Uma vez por ano, na data definida pelo edital da SBP</p></article>
     </div>
+    <div class="tep-prova">
+      <article class="tp" data-r data-d="1">
+        <div class="tp-hd">
+          <h3>Como é a prova</h3>
+          <div class="tp-chips"><span>2 provas no mesmo dia</span><span>100% on-line</span><span>4 horas</span></div>
+        </div>
+        <div class="tp-split">
+          <div class="tp-part"><span class="tp-bar"></span><span class="tp-w">Peso 6</span><b>Teórico-prática</b><p>4 a 5 questões discursivas sobre casos clínicos</p></div>
+          <div class="tp-part"><span class="tp-bar"></span><span class="tp-w">Peso 4</span><b>Teórica</b><p>50 questões objetivas</p></div>
+        </div>
+      </article>
+      <article class="ta" data-r data-d="2">
+        <span class="ta-k">Aprovação</span>
+        <div class="ta-n" data-count="60">60</div>
+        <p>de nota final, no mínimo, sem ficar abaixo de 50% em nenhuma das duas provas</p>
+      </article>
+    </div>
+    <p class="lib" data-r><svg aria-hidden="true"><use href="#i-target"/></svg><span><strong>Como a gente prepara:</strong> grade completa — toda a Pediatria na profundidade que a banca cobra, priorizada pela análise das provas anteriores.</span></p>
   </div>
   <p class="ement-note" style="margin-top:22px">Ficou com alguma dúvida sobre a prova ou sobre os requisitos? <a href="#" data-link="wpp" style="color:var(--blue-l);font-weight:600">Fale com a nossa equipe no WhatsApp</a>.</p>
 </section>
@@ -614,8 +717,8 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     </div>
     <div class="fcard" data-r data-d="2">
       <div class="fico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></div>
-      <h3>Aulas semanais</h3>
-      <p>Liberação semanal de aulas até o dia da prova — ritmo constante, pensado para a rotina médica.</p>
+      <h3>Aulas toda segunda</h3>
+      <p>4 aulas novas toda segunda, às 12h, durante 24 semanas (04/01 a 14/06/2027) — ritmo constante, pensado para a rotina médica.</p>
     </div>
     <div class="fcard" data-r data-d="3">
       <div class="fico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M18.7 8l-5.1 5.2-2.8-2.8L7 14.3"/></svg></div>
@@ -625,14 +728,12 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <div class="fcard" data-r data-d="4">
       <div class="fico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3 8-8"/><path d="M20 12v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg></div>
       <h3>Banco de questões</h3>
-      <!-- FICTICIO: quantidade -->
-      <p>Mais de 1.500 questões comentadas, organizadas por tema e no estilo da banca da SBP.</p>
+      <p>950 questões comentadas (10 por aula), organizadas por tema e no estilo da banca da SBP.</p>
     </div>
     <div class="fcard" data-r data-d="5">
       <div class="fico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="15" height="13" rx="2"/><path d="M7 7V5a2 2 0 0 1 2-2h11a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2h-2"/></svg></div>
       <h3>Flashcards</h3>
-      <!-- FICTICIO: quantidade -->
-      <p>Mais de 600 flashcards de revisão ativa para fixar o que não pode escapar na prova.</p>
+      <p>1.900 flashcards de revisão ativa (20 por tema) para fixar o que não pode escapar na prova.</p>
     </div>
     <div class="fcard" data-r data-d="6">
       <div class="fico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 13h6M9 17h4"/></svg></div>
@@ -650,20 +751,20 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <p>Toda a Pediatria mapeada em módulos, na ordem que faz sentido para quem está estudando para prova.</p>
   </div>
   <div class="ement">
-    <div class="emod" data-r data-d="1"><span class="emod-n">01</span><span>Neonatologia e reanimação neonatal</span></div>
-    <div class="emod" data-r data-d="1"><span class="emod-n">02</span><span>Aleitamento materno e nutrição</span></div>
-    <div class="emod" data-r data-d="2"><span class="emod-n">03</span><span>Crescimento e desenvolvimento</span></div>
-    <div class="emod" data-r data-d="2"><span class="emod-n">04</span><span>Imunizações e calendário vacinal</span></div>
-    <div class="emod" data-r data-d="3"><span class="emod-n">05</span><span>Infectologia pediátrica</span></div>
-    <div class="emod" data-r data-d="3"><span class="emod-n">06</span><span>Pneumologia e alergia</span></div>
-    <div class="emod" data-r data-d="4"><span class="emod-n">07</span><span>Gastroenterologia e hepatologia</span></div>
-    <div class="emod" data-r data-d="4"><span class="emod-n">08</span><span>Cardiologia pediátrica</span></div>
-    <div class="emod" data-r data-d="5"><span class="emod-n">09</span><span>Nefrologia e distúrbios hidroeletrolíticos</span></div>
-    <div class="emod" data-r data-d="5"><span class="emod-n">10</span><span>Endocrinologia e metabolismo</span></div>
-    <div class="emod" data-r data-d="6"><span class="emod-n">11</span><span>Hematologia e oncologia</span></div>
-    <div class="emod" data-r data-d="6"><span class="emod-n">12</span><span>Neurologia e neurodesenvolvimento</span></div>
-    <div class="emod" data-r data-d="6"><span class="emod-n">13</span><span>Emergências e terapia intensiva pediátrica</span></div>
-    <div class="emod" data-r data-d="6"><span class="emod-n">14</span><span>Adolescência, dermatologia e genética</span></div>
+    <div class="emod" data-r data-d="1"><span class="ic"><svg><use href="#i-baby"/></svg></span><span class="emod-n">01</span><span class="emod-t">Neonatologia e reanimação neonatal</span></div>
+    <div class="emod" data-r data-d="2"><span class="ic"><svg><use href="#i-bottle"/></svg></span><span class="emod-n">02</span><span class="emod-t">Aleitamento materno e nutrição</span></div>
+    <div class="emod" data-r data-d="3"><span class="ic"><svg><use href="#i-grow"/></svg></span><span class="emod-n">03</span><span class="emod-t">Crescimento e desenvolvimento</span></div>
+    <div class="emod" data-r data-d="4"><span class="ic"><svg><use href="#i-syringe"/></svg></span><span class="emod-n">04</span><span class="emod-t">Imunizações e calendário vacinal</span></div>
+    <div class="emod" data-r data-d="1"><span class="ic"><svg><use href="#i-thermo"/></svg></span><span class="emod-n">05</span><span class="emod-t">Infectologia pediátrica</span></div>
+    <div class="emod" data-r data-d="2"><span class="ic"><svg><use href="#i-wind"/></svg></span><span class="emod-n">06</span><span class="emod-t">Pneumologia e alergia</span></div>
+    <div class="emod" data-r data-d="3"><span class="ic"><svg><use href="#i-apple"/></svg></span><span class="emod-n">07</span><span class="emod-t">Gastroenterologia e hepatologia</span></div>
+    <div class="emod" data-r data-d="4"><span class="ic"><svg><use href="#i-heart"/></svg></span><span class="emod-n">08</span><span class="emod-t">Cardiologia pediátrica</span></div>
+    <div class="emod" data-r data-d="1"><span class="ic"><svg><use href="#i-drop"/></svg></span><span class="emod-n">09</span><span class="emod-t">Nefrologia e distúrbios hidroeletrolíticos</span></div>
+    <div class="emod" data-r data-d="2"><span class="ic"><svg><use href="#i-flask"/></svg></span><span class="emod-n">10</span><span class="emod-t">Endocrinologia e metabolismo</span></div>
+    <div class="emod" data-r data-d="3"><span class="ic"><svg><use href="#i-micro"/></svg></span><span class="emod-n">11</span><span class="emod-t">Hematologia e oncologia</span></div>
+    <div class="emod" data-r data-d="4"><span class="ic"><svg><use href="#i-brain"/></svg></span><span class="emod-n">12</span><span class="emod-t">Neurologia e neurodesenvolvimento</span></div>
+    <div class="emod" data-r data-d="1"><span class="ic"><svg><use href="#i-siren"/></svg></span><span class="emod-n">13</span><span class="emod-t">Emergências e terapia intensiva pediátrica</span></div>
+    <div class="emod" data-r data-d="2"><span class="ic"><svg><use href="#i-dna"/></svg></span><span class="emod-n">14</span><span class="emod-t">Adolescência, dermatologia e genética</span></div>
   </div>
   <!-- FICTICIO: confirmar se a ementa reflete o conteúdo real do curso -->
   <p class="ement-note">A ordem e a profundidade de cada módulo seguem o peso que o tema tem historicamente na prova do TEP.</p>
@@ -741,8 +842,15 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     </div>
     <div class="fq">
       <button class="fq-q">As aulas são ao vivo ou gravadas?<span class="fq-i"></span></button>
-      <!-- FICTICIO: confirmar o formato real -->
-      <div class="fq-a"><p>As aulas ficam gravadas na plataforma Talks e são liberadas semanalmente, conforme o cronograma do curso. Você assiste no seu horário, quantas vezes quiser, até o dia da prova.</p></div>
+      <div class="fq-a"><p>São 95 aulas em vídeo, gravadas, liberadas na plataforma Talks aos poucos: 4 aulas novas toda segunda, às 12h. Você assiste no seu horário, quantas vezes quiser, até o dia da prova.</p></div>
+    </div>
+    <div class="fq">
+      <button class="fq-q">Quando as aulas começam e até quando vão?<span class="fq-i"></span></button>
+      <div class="fq-a"><p>A primeira liberação é em 04/01/2027 e a última em 14/06/2027: são 24 semanas de aulas novas. As questões e os flashcards de cada temática entram junto com as aulas dela, toda segunda às 12h.</p></div>
+    </div>
+    <div class="fq">
+      <button class="fq-q">O curso tem simulados?<span class="fq-i"></span></button>
+      <div class="fq-a"><p>Sim. São 4 simulados ao longo do curso, um a cada 6 semanas de aula, para você medir a evolução antes da prova.</p></div>
     </div>
     <div class="fq">
       <button class="fq-q">Por quanto tempo eu tenho acesso ao curso?<span class="fq-i"></span></button>
@@ -750,7 +858,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     </div>
     <div class="fq">
       <button class="fq-q">Dá tempo de estudar com plantão?<span class="fq-i"></span></button>
-      <div class="fq-a"><p>O cronograma foi desenhado exatamente para isso. A liberação é semanal, com aulas de duração pensada para caber entre plantões, e o conteúdo é priorizado pela análise das provas anteriores — você não perde tempo com o que raramente cai.</p></div>
+      <div class="fq-a"><p>O cronograma foi desenhado exatamente para isso. São 4 aulas novas por semana, sempre às segundas, com duração pensada para caber entre plantões, e o conteúdo é priorizado pela análise das provas anteriores — você não perde tempo com o que raramente cai.</p></div>
     </div>
     <div class="fq">
       <button class="fq-q">Como faço para pagar e em quantas vezes?<span class="fq-i"></span></button>
@@ -888,6 +996,27 @@ var LOTES = [
   mob.addEventListener('click', function (e) {
     if (e.target.tagName === 'A') { mob.classList.remove('on'); burger.classList.remove('on'); burger.setAttribute('aria-expanded', 'false'); }
   });
+
+  /* números contam do zero quando aparecem na tela (o HTML já traz o valor final) */
+  var reduz = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var conts = document.querySelectorAll('[data-count]');
+  if (conts.length && 'IntersectionObserver' in window && !reduz) {
+    var co = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        co.unobserve(en.target);
+        var el = en.target, alvo = +el.getAttribute('data-count'), t0 = 0;
+        var passo = function (t) {
+          if (!t0) t0 = t;
+          var p = Math.min(1, (t - t0) / 1300);
+          el.textContent = Math.round(alvo * (1 - Math.pow(1 - p, 3))).toLocaleString('pt-BR');
+          if (p < 1) requestAnimationFrame(passo);
+        };
+        requestAnimationFrame(passo);
+      });
+    }, { threshold: 0.6 });
+    conts.forEach(function (el) { el.textContent = '0'; co.observe(el); });
+  }
 
   /* reveal on scroll */
   var els = document.querySelectorAll('[data-r]');
