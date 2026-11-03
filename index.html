@@ -22,7 +22,8 @@
   ═══════════════════════════════════════════════════════════════════
   Tudo está marcado com a palavra FICTICIO em comentários no HTML. Resumo:
 
-  • Preços:        TEP R$ 2.497 (12x R$ 249,70)
+  (os preços JÁ SÃO REAIS: 4 lotes de 20/11/2026 a 01/02/2027, em 6x sem
+   juros — ficam na var LOTES do <script>; o lote do dia entra sozinho)
   • Datas:         início da turma 08/03/2027
                    inscrições até 05/03/2027 · prova nov/2027
   • Números:       nº de aulas, horas, questões e flashcards no hero
@@ -160,8 +161,7 @@ ul{list-style:none}
 .photo-frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 70px rgba(0,116,242,.12)}
 .photo-frame img{width:100%;height:auto;display:block}
 .photo-frame::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(4,4,5,0) 45%,rgba(4,4,5,.55) 78%,rgba(4,4,5,.92) 100%),linear-gradient(to right,rgba(4,4,5,.35),transparent 30%)}
-/* nomes alinhados à direita: o selo "Próxima turma" (.flt-1) flutua no canto inferior esquerdo */
-.photo-names{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 24px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+.photo-names{position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 24px;display:flex;gap:10px 18px;flex-wrap:wrap;align-items:center}
 .pname{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:700;color:var(--white)}
 .pname::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue)}
 .pname span{color:var(--gm);font-weight:500}
@@ -170,7 +170,6 @@ ul{list-style:none}
 .flt-label{font-size:10.5px;color:var(--gm);font-weight:500;letter-spacing:.4px;text-transform:uppercase}
 .flt-val{font-size:21px;font-weight:900;color:var(--white);letter-spacing:-.5px;line-height:1.15}
 .flt-val em{font-style:normal;color:var(--blue)}
-.flt-1{bottom:52px;left:-34px}
 .flt-2{top:30px;right:-26px}
 
 /* ═══ TAGLINE ═════════════════════════════════════════════════ */
@@ -264,11 +263,37 @@ ul{list-style:none}
 .plan-t{font-size:44px;font-weight:900;letter-spacing:-2px;margin:4px 0 8px}
 .plan-sub{font-size:14px;color:var(--gm);line-height:1.6}
 .plan-price{margin:24px 0 24px;padding-top:24px;border-top:1px solid rgba(255,255,255,.12)}
-.plan-old{font-size:13px;color:var(--gm);text-decoration:line-through}
 .plan-x{font-size:13px;color:var(--gl);margin-bottom:2px}
-.plan-v{font-size:46px;font-weight:900;letter-spacing:-2px;color:var(--blue);line-height:1}
+.plan-v{display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 10px;font-size:46px;font-weight:900;letter-spacing:-2px;color:var(--blue);line-height:1}
 .plan-v small{font-size:17px;font-weight:700;color:var(--gl)}
+.plan-sj{font-size:15px;font-weight:700;letter-spacing:0;color:var(--blue-l)}
 .plan-cash{font-size:13.5px;color:var(--gm);margin-top:8px;margin-bottom:26px}
+
+/* lotes: só o aberto mostra o valor; os próximos ficam trancados, só com a data */
+.lotes{max-width:860px;margin:0 auto 34px;display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.lote{padding:16px 18px;border-radius:16px;border:1px solid var(--gbd);background:rgba(255,255,255,.03)}
+.lote-h{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px}
+.lote-n{font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--gm)}
+.lote-ico{width:15px;height:15px;flex-shrink:0;fill:none;stroke:var(--gm);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.lote-v{font-size:17px;font-weight:800;letter-spacing:-.3px;color:var(--gm)}
+.lote-d{font-size:12.5px;color:var(--gm);margin-top:2px}
+.lote.on{border-color:rgba(0,116,242,.6);background:linear-gradient(150deg,rgba(0,116,242,.2),rgba(0,116,242,.05));box-shadow:0 0 30px rgba(0,116,242,.18)}
+.lote.on .lote-n{color:var(--white)}
+.lote.on .lote-v{color:var(--white)}
+.lote.on .lote-d{color:var(--blue-l);font-weight:600}
+.lote-live{width:8px;height:8px;border-radius:50%;background:var(--blue-l);animation:pb 2.2s infinite}
+@keyframes pb{0%,100%{box-shadow:0 0 0 0 rgba(90,166,255,.55)}60%{box-shadow:0 0 0 7px rgba(90,166,255,0)}}
+.lote.past{opacity:.55}
+.lote.past .lote-n{text-decoration:line-through}
+
+/* contador até a virada do lote */
+.cd{margin-bottom:22px;padding:16px 18px;border-radius:16px;background:rgba(4,4,5,.45);border:1px solid rgba(0,116,242,.35)}
+.cd-l{font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue-l);margin-bottom:10px}
+.cd-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.cd-u{text-align:center;padding:9px 0 7px;border-radius:10px;background:rgba(255,255,255,.05)}
+.cd-u b{display:block;font-size:26px;font-weight:900;letter-spacing:-.5px;line-height:1.1;color:var(--white);font-variant-numeric:tabular-nums}
+.cd-u span{font-size:10.5px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:var(--gm)}
+.cd-prox{font-size:12.5px;color:var(--gl);margin-top:10px}
 .plan ul{display:flex;flex-direction:column;gap:13px;padding-top:4px}
 .plan li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--gl);line-height:1.5}
 .plan li svg{flex-shrink:0;width:17px;height:17px;margin-top:2px;stroke:var(--blue-l);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
@@ -333,7 +358,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .hero-in{grid-template-columns:1fr;gap:48px}
   .hero-desc{max-width:none}
   .hero-vis{max-width:460px;margin:0 auto;width:100%}
-  .flt-1{left:-12px;bottom:52px}
   .flt-2{right:-10px}
   .feat,.deps{grid-template-columns:1fr 1fr}
 }
@@ -341,6 +365,8 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .sec,.sec-sm{padding:72px 20px}
   #hero{padding:120px 20px 70px;min-height:auto}
   .profs,.ement,.feat,.deps{grid-template-columns:1fr}
+  .lotes{grid-template-columns:1fr 1fr;gap:10px;margin-bottom:28px}
+  .lote{padding:14px 15px}
   .curso-card,.plan{grid-template-columns:1fr;gap:28px;padding:32px 26px}
   .curso-l .btn{margin-top:4px;width:100%}
   .hero-stats{gap:18px 20px;max-width:none}
@@ -437,11 +463,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
           <span class="pname">Natália Dias <span>· Intensiva Pediátrica</span></span>
         </div>
       </div>
-      <div class="flt flt-1">
-        <div class="flt-label">Próxima turma</div>
-        <!-- FICTICIO: data -->
-        <div class="flt-val">08 <em>mar</em> 2027</div>
-      </div>
       <div class="flt flt-2">
         <div class="flt-label">Carga horária</div>
         <!-- FICTICIO: carga -->
@@ -473,14 +494,14 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     </div>
     <div class="curso-r">
       <div class="trilha-meta">
-        <!-- FICTICIO: datas, volume e preço -->
+        <!-- FICTICIO: datas e volume (o preço vem da var LOTES) -->
         <div class="tm"><span>Início da turma</span><span>08/03/2027</span></div>
         <div class="tm"><span>Inscrições até</span><span>05/03/2027</span></div>
         <div class="tm"><span>Prova</span><span>Novembro/2027</span></div>
         <div class="tm"><span>Banca</span><span>SBP / AMB</span></div>
         <div class="tm"><span>Volume</span><span>Grade completa · +80 aulas</span></div>
         <div class="tm"><span>Acesso</span><span>Até o dia da prova</span></div>
-        <div class="tm"><span>Investimento</span><span>12x R$ 249,70</span></div>
+        <div class="tm"><span>Investimento</span><span id="lote-resumo">6x R$ 416,65 sem juros</span></div>
       </div>
     </div>
   </article>
@@ -663,19 +684,30 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <h2>Garanta a sua vaga</h2>
     <p>Matrícula única, acesso até o dia da prova. Sem renovação, sem surpresa.</p>
   </div>
-  <!-- FICTICIO: todos os valores desta seção -->
+  <!-- Valores e datas dos lotes ficam na var LOTES do <script>. O HTML já vem com o
+       Lançamento preenchido; o script troca pelo lote do dia e monta a régua de lotes. -->
+  <div class="lotes" id="lotes" data-r aria-label="Lotes de inscrição"></div>
   <div class="plans">
     <article class="plan hot" id="plano-tep" data-r data-d="1">
-      <span class="plan-flag">Turma 2027 · vagas limitadas</span>
+      <span class="plan-flag" id="lote-flag">Lote atual: Lançamento</span>
       <div class="plan-head">
         <div class="plan-name">Preparatório</div>
         <div class="plan-t">TEP</div>
         <p class="plan-sub">Para conquistar o Título de Especialista em Pediatria e o registro do RQE no seu CRM.</p>
         <div class="plan-price">
-          <div class="plan-old">De R$ 2.997</div>
-          <div class="plan-x">12x de</div>
-          <div class="plan-v">R$&nbsp;249<small>,70</small></div>
-          <div class="plan-cash">ou R$ 2.497 à vista</div>
+          <div class="plan-x">6x de</div>
+          <div class="plan-v"><span id="lote-parcela">R$&nbsp;416<small>,65</small></span><span class="plan-sj">sem juros</span></div>
+          <div class="plan-cash">ou R$ <span id="lote-total">2.499,90</span> à vista</div>
+        </div>
+        <div class="cd" id="cd" role="timer">
+          <div class="cd-l">Este valor acaba em</div>
+          <div class="cd-row">
+            <div class="cd-u"><b>--</b><span>dias</span></div>
+            <div class="cd-u"><b>--</b><span>horas</span></div>
+            <div class="cd-u"><b>--</b><span>min</span></div>
+            <div class="cd-u"><b>--</b><span>seg</span></div>
+          </div>
+          <p class="cd-prox" id="cd-prox"></p>
         </div>
         <a href="#" data-link="tep" class="btn btn-primary btn-full">Quero meu RQE</a>
       </div>
@@ -721,8 +753,8 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     </div>
     <div class="fq">
       <button class="fq-q">Como faço para pagar e em quantas vezes?<span class="fq-i"></span></button>
-      <!-- FICTICIO: formas de pagamento -->
-      <div class="fq-a"><p>Cartão de crédito em até 12x, Pix ou boleto à vista. O acesso é liberado assim que o pagamento é confirmado.</p></div>
+      <!-- FICTICIO: confirmar Pix e boleto (os 6x sem juros são reais) -->
+      <div class="fq-a"><p>Cartão de crédito em até 6x sem juros, Pix ou boleto à vista. O acesso é liberado assim que o pagamento é confirmado.</p></div>
     </div>
     <div class="fq">
       <button class="fq-q">Existe algum material impresso?<span class="fq-i"></span></button>
@@ -805,6 +837,20 @@ var LINKS = {
 /* ID do vídeo de apresentação no YouTube — trocar */
 var VIDEO_ID = 'VIDEO_ID_TEP';
 
+/* ═══════════════════════════════════════════════════════════════
+   LOTES — o lote aberto é escolhido pela data (horário de Brasília):
+   cada lote vale da sua data de início até a véspera do próximo.
+   Só o lote aberto mostra o valor; os seguintes aparecem trancados.
+   Valor em centavos (total); a página divulga em PARCELAS sem juros.
+   ═══════════════════════════════════════════════════════════════ */
+var PARCELAS = 6;
+var LOTES = [
+  { nome: 'Lançamento', inicio: '2026-11-20', valor: 249990 },
+  { nome: '1º lote',    inicio: '2026-12-01', valor: 279990 },
+  { nome: '2º lote',    inicio: '2027-01-01', valor: 309990 },
+  { nome: '3º lote',    inicio: '2027-02-01', valor: 339990 }
+];
+
 (function () {
   'use strict';
 
@@ -869,6 +915,48 @@ var VIDEO_ID = 'VIDEO_ID_TEP';
       if (!VIDEO_ID || VIDEO_ID.indexOf('VIDEO_ID') === 0) { window.open(LINKS.wpp, '_blank', 'noopener'); return; }
       box.parentElement.innerHTML = '<iframe src="https://www.youtube.com/embed/' + VIDEO_ID + '?autoplay=1&rel=0" title="Preparatório TEP" allow="accelerometer; autoplay; clipboard-write; encrypted-media; picture-in-picture" allowfullscreen></iframe>';
     });
+  }
+
+  /* lotes + contador — vira de lote sozinho, sem precisar recarregar */
+  var lotesEl = document.getElementById('lotes'), cd = document.getElementById('cd');
+  if (lotesEl && cd) {
+    var ini = LOTES.map(function (l) { return Date.parse(l.inicio + 'T00:00:00-03:00'); });
+    var cdN = cd.querySelectorAll('.cd-u b'), feito = -1;
+    var ICO_LOCK = '<svg class="lote-ico" viewBox="0 0 24 24" aria-label="Trancado"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
+    var ICO_OK = '<svg class="lote-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
+    var brl = function (c) { return (c / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
+    var dia = function (t) { return new Date(t).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }); };
+    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
+    /* antes da data do Lançamento, a página já mostra o Lançamento */
+    var atual = function (agora) {
+      var i = 0;
+      while (i + 1 < LOTES.length && agora >= ini[i + 1]) i++;
+      return i;
+    };
+    var montar = function (a) {
+      var l = LOTES[a], parc = brl(Math.round(l.valor / PARCELAS)), prox = LOTES[a + 1];
+      lotesEl.innerHTML = LOTES.map(function (lt, i) {
+        if (i < a) return '<div class="lote past"><div class="lote-h"><span class="lote-n">' + lt.nome + '</span>' + ICO_OK + '</div><div class="lote-v">Encerrado</div><div class="lote-d">até ' + dia(ini[i + 1] - 1) + '</div></div>';
+        if (i > a) return '<div class="lote lock"><div class="lote-h"><span class="lote-n">' + lt.nome + '</span>' + ICO_LOCK + '</div><div class="lote-v">R$ •••,••</div><div class="lote-d">Abre em ' + dia(ini[i]) + '</div></div>';
+        return '<div class="lote on"><div class="lote-h"><span class="lote-n">' + lt.nome + '</span><span class="lote-live"></span></div><div class="lote-v">' + PARCELAS + 'x R$ ' + parc + '</div><div class="lote-d">' + (prox ? 'Aberto até ' + dia(ini[i + 1] - 1) : 'Último lote') + '</div></div>';
+      }).join('');
+      var p = parc.split(',');
+      document.getElementById('lote-parcela').innerHTML = 'R$&nbsp;' + p[0] + '<small>,' + p[1] + '</small>';
+      document.getElementById('lote-total').textContent = brl(l.valor);
+      document.getElementById('lote-flag').textContent = prox ? 'Lote atual: ' + l.nome : 'Último lote';
+      document.getElementById('lote-resumo').textContent = PARCELAS + 'x R$ ' + parc + ' sem juros';
+      document.getElementById('cd-prox').textContent = prox ? 'Em ' + dia(ini[a + 1]) + ', abre o ' + prox.nome + ' e o valor sobe.' : '';
+      cd.hidden = !prox;
+    };
+    var tick = function () {
+      var agora = Date.now(), a = atual(agora);
+      if (a !== feito) { montar(a); feito = a; }
+      if (a + 1 >= LOTES.length) return;
+      var s = Math.max(0, Math.floor((ini[a + 1] - agora) / 1000));
+      [Math.floor(s / 86400), Math.floor(s / 3600) % 24, Math.floor(s / 60) % 60, s % 60].forEach(function (v, k) { cdN[k].textContent = pad(v); });
+    };
+    tick();
+    setInterval(tick, 1000);
   }
 })();
 </script>

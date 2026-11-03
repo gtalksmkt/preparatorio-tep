@@ -17,13 +17,28 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 | Item | Onde |
 |---|---|
 | Números do hero (+80 aulas, +120h, +1.500 questões, +600 flashcards) | `.hero-stats` |
-| Datas da turma, da prova e prazo de inscrição (2027) | hero, `#curso`, CTA final |
-| Preço (12x R$ 249,70 · R$ 2.497 à vista) | `#curso` e `#pricing` |
+| Datas da turma, da prova e prazo de inscrição (2027) | `#curso`, CTA final |
 | Quantidade de questões e flashcards | cards da seção `#estrutura` |
 | Depoimentos | seção `#depoimentos` — devem vir de alunos dos outros preparatórios do Grupo Talks |
 | ID do vídeo do YouTube | var `VIDEO_ID` no `<script>` |
 | Links de checkout | var `LINKS` no `<script>` (hoje todos apontam para o WhatsApp) |
 | E-mail de contato | rodapé — confirmar se continua `contato@emergencytalks.com.br` |
+
+## Preço por lotes (valores reais)
+
+Divulgado em **6x sem juros**. O lote aberto é escolhido pela data (horário de Brasília)
+e vira sozinho à meia-noite; só ele mostra o valor, os seguintes aparecem trancados com a
+data de abertura, e um contador marca quanto falta para a virada.
+
+| Lote | Abre em | Total | 6x de |
+|---|---|---|---|
+| Lançamento | 20/11/2026 | R$ 2.499,90 | R$ 416,65 |
+| 1º lote | 01/12/2026 | R$ 2.799,90 | R$ 466,65 |
+| 2º lote | 01/01/2027 | R$ 3.099,90 | R$ 516,65 |
+| 3º lote | 01/02/2027 | R$ 3.399,90 | R$ 566,65 |
+
+Para mudar valor ou data, edite só a var `LOTES` no `<script>` do `index.html`.
+Antes de 20/11 a página já mostra o Lançamento.
 
 ## Regras do produto (decididas com o cliente)
 
