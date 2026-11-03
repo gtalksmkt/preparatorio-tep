@@ -16,7 +16,6 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 
 | Item | Onde |
 |---|---|
-| Mês da prova e prazo de inscrição (2027) | `#curso`, CTA final |
 | Ementa (14 módulos) | seção `#ementa` — confirmar se reflete o curso real |
 | Depoimentos | seção `#depoimentos` — devem vir de alunos dos outros preparatórios do Grupo Talks |
 | ID do vídeo do YouTube | var `VIDEO_ID` no `<script>` |
@@ -65,6 +64,8 @@ toda segunda às 12h. Aparecem no hero, no bloco de números de `#curso`, nos ca
 - **Não alegar resultado** (nº de aprovados, % de aprovação, tempo de casa): o curso
   começa em 2027. A prova de valor é o volume de conteúdo.
 - **Não existe garantia de reembolso.**
+- **Sem prazo de inscrição e sem mês da prova** (decisão de 03/11/2026: não há como
+  confirmar). Para a data da prova, usar só "data definida pelo edital da SBP".
 - O **currículo acadêmico das professoras já é real** (CRM, RQE, formação, residências,
   atuação e preceptoria) — não substituir por placeholder.
 
