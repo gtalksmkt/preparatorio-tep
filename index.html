@@ -115,7 +115,7 @@ ul{list-style:none}
 [data-d="1"]{transition-delay:.08s}[data-d="2"]{transition-delay:.16s}
 [data-d="3"]{transition-delay:.24s}[data-d="4"]{transition-delay:.32s}
 [data-d="5"]{transition-delay:.40s}[data-d="6"]{transition-delay:.48s}
-@media (prefers-reduced-motion:reduce){[data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.flt{animation:none}.tp-bar{transform:none;transition:none}}
+@media (prefers-reduced-motion:reduce){[data-r]{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.tp-bar{transform:none;transition:none}}
 
 /* ═══ NAVBAR ══════════════════════════════════════════════════ */
 #nav{position:fixed;top:0;left:0;right:0;z-index:300;padding:14px 24px;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
@@ -162,9 +162,6 @@ ul{list-style:none}
 .hst-n{font-size:26px;font-weight:900;color:var(--blue);letter-spacing:-1px;line-height:1;font-variant-numeric:tabular-nums}
 .hst-l{font-size:12px;color:var(--gm);font-weight:500;margin-top:4px;line-height:1.35}
 
-/* selo sobre a foto balança devagar */
-@keyframes bob{50%{translate:0 -14px}}
-
 /* foto das professoras — moldura com scrim, sem recorte sujo */
 .hero-vis{position:relative}
 .photo-frame{position:relative;border-radius:28px;overflow:hidden;border:1px solid rgba(255,255,255,.12);box-shadow:0 30px 70px rgba(0,0,0,.6),0 0 70px rgba(0,116,242,.12)}
@@ -175,11 +172,6 @@ ul{list-style:none}
 .pname::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue)}
 .pname span{color:var(--gm);font-weight:500}
 .photo-glow{position:absolute;inset:auto 0 -60px 0;height:300px;background:radial-gradient(ellipse at 50% 100%,rgba(0,116,242,.3) 0%,transparent 70%);z-index:-1;pointer-events:none}
-.flt{position:absolute;z-index:3;padding:14px 18px;border-radius:16px;background:rgba(10,11,15,.88);border:1px solid var(--gbd);backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);box-shadow:0 14px 42px rgba(0,0,0,.5);animation:bob 6s ease-in-out infinite}
-.flt-label{font-size:10.5px;color:var(--gm);font-weight:500;letter-spacing:.4px;text-transform:uppercase}
-.flt-val{font-size:21px;font-weight:900;color:var(--white);letter-spacing:-.5px;line-height:1.15}
-.flt-val em{font-style:normal;color:var(--blue)}
-.flt-2{top:30px;right:-26px}
 
 /* ═══ TAGLINE ═════════════════════════════════════════════════ */
 #tagline{padding:26px 24px;background:linear-gradient(90deg,rgba(0,116,242,.05),rgba(0,116,242,.13),rgba(0,116,242,.05));border-top:1px solid rgba(0,116,242,.22);border-bottom:1px solid rgba(0,116,242,.22);text-align:center}
@@ -398,7 +390,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .hero-in{grid-template-columns:1fr;gap:48px}
   .hero-desc{max-width:none}
   .hero-vis{max-width:460px;margin:0 auto;width:100%}
-  .flt-2{right:-10px}
   .feat,.deps,.tep-row{grid-template-columns:1fr 1fr}
   .emod{flex-basis:calc(33.333% - 8px)}
 }
@@ -431,7 +422,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
   .ta-n{font-size:64px}
 }
 @media (max-width:420px){
-  .flt{display:none}
   .hero-main{letter-spacing:-2px}
 }
 </style>
@@ -539,10 +529,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
           <span class="pname">Rebecca Azulay <span>· Pediatria</span></span>
           <span class="pname">Natália Dias <span>· Intensiva Pediátrica</span></span>
         </div>
-      </div>
-      <div class="flt flt-2">
-        <div class="flt-label">Aulas novas toda</div>
-        <div class="flt-val">Segunda, <em>12h</em></div>
       </div>
     </div>
   </div>
