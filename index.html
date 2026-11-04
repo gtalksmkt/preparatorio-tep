@@ -317,15 +317,6 @@ ul{list-style:none}
 @keyframes pb{0%,100%{box-shadow:0 0 0 0 rgba(90,166,255,.55)}60%{box-shadow:0 0 0 7px rgba(90,166,255,0)}}
 .lote.past{opacity:.55}
 .lote.past .lote-n{text-decoration:line-through}
-
-/* contador até a virada do lote */
-.cd{margin-bottom:22px;padding:16px 18px;border-radius:16px;background:rgba(4,4,5,.45);border:1px solid rgba(0,116,242,.35)}
-.cd-l{font-size:11.5px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:var(--blue-l);margin-bottom:10px}
-.cd-row{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
-.cd-u{text-align:center;padding:9px 0 7px;border-radius:10px;background:rgba(255,255,255,.05)}
-.cd-u b{display:block;font-size:26px;font-weight:900;letter-spacing:-.5px;line-height:1.1;color:var(--white);font-variant-numeric:tabular-nums}
-.cd-u span{font-size:10.5px;font-weight:500;letter-spacing:.6px;text-transform:uppercase;color:var(--gm)}
-.cd-prox{font-size:12.5px;color:var(--gl);margin-top:10px}
 .plan ul{display:flex;flex-direction:column;gap:13px;padding-top:4px}
 .plan li{display:flex;gap:11px;align-items:flex-start;font-size:14.5px;color:var(--gl);line-height:1.5}
 .plan li svg{flex-shrink:0;width:17px;height:17px;margin-top:2px;stroke:var(--blue-l);stroke-width:2.4;fill:none;stroke-linecap:round;stroke-linejoin:round}
@@ -594,8 +585,9 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
 </section>
 
 <!-- ═══ PRICING ═══ -->
-<!-- Logo depois do vídeo, de propósito: quem chega aqui já viu o curso, e o contador
-     do lote é o gatilho de urgência. -->
+<!-- Logo depois do vídeo, de propósito: quem chega aqui já viu o curso, e a régua de
+     lotes (próximos trancados, com a data de abertura) é o gatilho de urgência.
+     Sem contador de dias até a virada (decisão de 04/11/2026). -->
 <section id="pricing" class="sec">
   <div class="sec-hd" data-r>
     <span class="eyebrow">Investimento</span>
@@ -616,16 +608,6 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
           <div class="plan-x">6x de</div>
           <div class="plan-v"><span id="lote-parcela">R$&nbsp;416<small>,65</small></span><span class="plan-sj">sem juros</span></div>
           <div class="plan-cash">ou R$ <span id="lote-total">2.499,90</span> à vista</div>
-        </div>
-        <div class="cd" id="cd" role="timer">
-          <div class="cd-l">Este valor acaba em</div>
-          <div class="cd-row">
-            <div class="cd-u"><b>--</b><span>dias</span></div>
-            <div class="cd-u"><b>--</b><span>horas</span></div>
-            <div class="cd-u"><b>--</b><span>min</span></div>
-            <div class="cd-u"><b>--</b><span>seg</span></div>
-          </div>
-          <p class="cd-prox" id="cd-prox"></p>
         </div>
         <a href="#" data-link="tep" class="btn btn-primary btn-full">Quero meu RQE</a>
       </div>
@@ -1025,16 +1007,15 @@ var LOTES = [
     });
   }
 
-  /* lotes + contador — vira de lote sozinho, sem precisar recarregar */
-  var lotesEl = document.getElementById('lotes'), cd = document.getElementById('cd');
-  if (lotesEl && cd) {
+  /* lotes — vira de lote sozinho, sem precisar recarregar */
+  var lotesEl = document.getElementById('lotes');
+  if (lotesEl) {
     var ini = LOTES.map(function (l) { return Date.parse(l.inicio + 'T00:00:00-03:00'); });
-    var cdN = cd.querySelectorAll('.cd-u b'), feito = -1;
+    var feito = -1;
     var ICO_LOCK = '<svg class="lote-ico" viewBox="0 0 24 24" aria-label="Trancado"><rect x="4" y="11" width="16" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>';
     var ICO_OK = '<svg class="lote-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>';
     var brl = function (c) { return (c / 100).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 }); };
     var dia = function (t) { return new Date(t).toLocaleDateString('pt-BR', { timeZone: 'America/Sao_Paulo' }); };
-    var pad = function (n) { return (n < 10 ? '0' : '') + n; };
     /* antes da data do Lançamento, a página já mostra o Lançamento */
     var atual = function (agora) {
       var i = 0;
@@ -1053,18 +1034,14 @@ var LOTES = [
       document.getElementById('lote-total').textContent = brl(l.valor);
       document.getElementById('lote-flag').textContent = prox ? 'Lote atual: ' + l.nome : 'Último lote';
       document.getElementById('lote-resumo').textContent = PARCELAS + 'x R$ ' + parc + ' sem juros';
-      document.getElementById('cd-prox').textContent = prox ? 'Em ' + dia(ini[a + 1]) + ', abre o ' + prox.nome + ' e o valor sobe.' : '';
-      cd.hidden = !prox;
     };
-    var tick = function () {
-      var agora = Date.now(), a = atual(agora);
+    /* confere a cada minuto: se a página ficar aberta na virada, troca o lote */
+    var conferir = function () {
+      var a = atual(Date.now());
       if (a !== feito) { montar(a); feito = a; }
-      if (a + 1 >= LOTES.length) return;
-      var s = Math.max(0, Math.floor((ini[a + 1] - agora) / 1000));
-      [Math.floor(s / 86400), Math.floor(s / 3600) % 24, Math.floor(s / 60) % 60, s % 60].forEach(function (v, k) { cdN[k].textContent = pad(v); });
     };
-    tick();
-    setInterval(tick, 1000);
+    conferir();
+    setInterval(conferir, 60000);
   }
 })();
 </script>

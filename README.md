@@ -25,8 +25,8 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 ## Preço por lotes (valores reais)
 
 Divulgado em **6x sem juros**. O lote aberto é escolhido pela data (horário de Brasília)
-e vira sozinho à meia-noite; só ele mostra o valor, os seguintes aparecem trancados com a
-data de abertura, e um contador marca quanto falta para a virada.
+e vira sozinho à meia-noite; só ele mostra o valor, e os seguintes aparecem trancados com a
+data de abertura. **Sem contador de dias até a virada** (tirado em 04/11/2026).
 
 | Lote | Abre em | Total | 6x de |
 |---|---|---|---|
