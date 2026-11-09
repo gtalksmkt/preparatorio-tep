@@ -609,7 +609,8 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
           <div class="plan-v"><span id="lote-parcela">R$&nbsp;416<small>,65</small></span><span class="plan-sj">sem juros</span></div>
           <div class="plan-cash">ou R$ <span id="lote-total">2.499,90</span> à vista</div>
         </div>
-        <a href="#" data-link="tep" class="btn btn-primary btn-full">Quero meu RQE</a>
+        <!-- botões de venda (data-venda): o link é o lp_checkout_url, preenchido pela plataforma dos devs -->
+        <a href="{{lp_checkout_url}}" class="btn btn-primary btn-full" data-venda>Quero meu RQE</a>
       </div>
       <ul>
         <li><svg viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>95 aulas em vídeo: toda a Pediatria, do começo ao fim</li>
@@ -839,7 +840,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
     <h2>A sua aprovação começa com<br>uma <em>decisão</em>.</h2>
     <p>As aulas começam em <strong>04/01/2027</strong> e o valor sobe a cada virada de lote. Garanta a sua vaga agora.</p>
     <div class="final-ctas">
-      <a href="#" data-link="tep" class="btn btn-primary">Quero meu RQE</a>
+      <a href="{{lp_checkout_url}}" class="btn btn-primary" data-venda>Quero meu RQE</a>
       <a href="#" data-link="wpp" class="btn btn-ghost">Falar no WhatsApp</a>
     </div>
   </div>
@@ -887,7 +888,7 @@ footer{background:#07080b;border-top:1px solid rgba(255,255,255,.08);padding:56p
 
 <!-- ═══ BARRA FIXA MOBILE ═══ -->
 <div id="sticky">
-  <a href="#" data-link="tep" class="btn btn-primary">Quero meu RQE</a>
+  <a href="{{lp_checkout_url}}" class="btn btn-primary" data-venda>Quero meu RQE</a>
   <a href="#" data-link="wpp" class="btn btn-outline">WhatsApp</a>
 </div>
 
@@ -900,8 +901,9 @@ var LINKS = {
   wpp: WHATSAPP + '?text=' + encodeURIComponent('Olá! Quero saber mais sobre o Preparatório TEP do Ped Talks.'),
   tep: WHATSAPP + '?text=' + encodeURIComponent('Olá! Quero me inscrever no Preparatório TEP.')
 };
-/* Quando houver checkout, basta trocar o valor acima pela URL, ex.:
-   LINKS.tep = 'https://pay.exemplo.com/preparatorio-tep'; */
+/* Os botões de venda (data-venda) não usam LINKS: o href deles é o lp_checkout_url,
+   que a plataforma dos devs preenche (pedido dos devs). LINKS.tep só é usado se a
+   página abrir sem essa troca — aí o clique cai no WhatsApp em vez de ir para um link quebrado. */
 
 /* ID do vídeo de apresentação no YouTube — trocar */
 var VIDEO_ID = 'VIDEO_ID_TEP';
@@ -922,6 +924,17 @@ var LOTES = [
 
 (function () {
   'use strict';
+
+  /* botões de venda: o href nunca é mexido aqui (a plataforma dos devs pode preenchê-lo antes
+     ou depois). Só no clique: se o código ainda não foi trocado pela URL do checkout, vai pro WhatsApp. */
+  document.querySelectorAll('[data-venda]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      if ((a.getAttribute('href') || '').indexOf('lp_checkout_url') !== -1) {
+        e.preventDefault();
+        window.open(LINKS.tep, '_blank', 'noopener');
+      }
+    });
+  });
 
   /* links */
   document.querySelectorAll('[data-link]').forEach(function (a) {

@@ -19,7 +19,6 @@ Tudo está marcado com a palavra `FICTICIO` em comentários dentro do `index.htm
 | Ementa (14 módulos) | seção `#ementa` — confirmar se reflete o curso real |
 | Depoimentos | seção `#depoimentos` — devem vir de alunos dos outros preparatórios do Grupo Talks |
 | ID do vídeo do YouTube | var `VIDEO_ID` no `<script>` |
-| Links de checkout | var `LINKS` no `<script>` (hoje todos apontam para o WhatsApp) |
 | E-mail de contato | rodapé — confirmar se continua `contato@emergencytalks.com.br` |
 
 ## Preço por lotes (valores reais)
@@ -54,6 +53,15 @@ semanas de liberação, quantas questões por aula nem quantos flashcards por te
 Liberação gradual: questões e flashcards entram junto com as aulas de cada temática,
 toda segunda às 12h. Aparecem no hero, no bloco de números de `#curso`, nos cards de
 `#estrutura`, na lista do plano e no FAQ — ao mudar um número, trocar em todos.
+
+## Botões de venda (checkout)
+
+Pedido dos devs: os 3 botões de venda ("Quero meu RQE" no card de preço, na chamada final e na
+barra fixa do celular) têm `href="{{lp_checkout_url}}"` e o atributo `data-venda`. A plataforma
+dos devs troca esse código pela URL do checkout. O script da página **não mexe** nesse href; só no
+clique, se o código ainda não tiver sido trocado (ex.: prévia no GitHub Pages), manda para o WhatsApp
+(`LINKS.tep`) em vez de abrir um link quebrado. Os outros botões "Quero meu RQE" / "Garantir minha
+vaga" só rolam a página até `#pricing`.
 
 ## Regras do produto (decididas com o cliente)
 
